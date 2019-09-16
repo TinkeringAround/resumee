@@ -1,15 +1,28 @@
-import React, { FC } from "react";
-import ReactDOM from "react-dom";
-import * as serviceWorker from "./utility/serviceWorker";
+import React, { FC } from 'react'
+import ReactDOM from 'react-dom'
+import * as serviceWorker from './utility/serviceWorker'
+import { Grommet } from 'grommet'
 
 // Styles
-import "./index.css";
+import './styles/index.css'
+import theme from './styles/theme'
+
+// Sections
+import Intro from './sections/intro/'
+
+// Components
+import Navigation from './components/navigation'
 
 //=========================================================
 const App: FC = () => {
-  return <div className="App"></div>;
-};
+  return (
+    <Grommet id="grommet" theme={theme} full>
+      <Navigation />
+      <Intro />
+    </Grommet>
+  )
+}
 
 //=========================================================
-ReactDOM.render(<App />, document.getElementById("root"));
-serviceWorker.unregister();
+ReactDOM.render(<App />, document.getElementById('root'))
+serviceWorker.unregister()
