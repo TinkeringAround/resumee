@@ -21,7 +21,8 @@ contentful
     if (results.hasOwnProperty('items')) {
       const intro = {
         title: results.items[0].fields['title'],
-        url: 'https:' + results.items[0].fields['image'].fields['file'].url
+        introImage: 'https:' + results.items[0].fields['introImage'].fields['file'].url,
+        profileImage: 'https:' + results.items[0].fields['profileImage'].fields['file'].url
       }
       fs.writeFileSync(pathPrefix + 'intro.json', JSON.stringify(intro, null, 2), 'utf-8')
     }

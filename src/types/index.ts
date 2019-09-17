@@ -1,6 +1,12 @@
 export type TIntro = {
   title: string
-  url: string
+  introImage: string
+  profileImage: string
 }
 
 //=========================================================
+
+export type TIcon = {
+  viewport: string
+  path: JSX.Element
+}
