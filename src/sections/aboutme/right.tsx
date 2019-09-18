@@ -7,7 +7,7 @@ const Right: FC = () => (
     <Text
       className="mono"
       color="dark"
-      size="1em"
+      size="1.25em"
       margin="0 0 1em 0"
       style={{ letterSpacing: '0.01em', fontWeight: 600 }}
     >

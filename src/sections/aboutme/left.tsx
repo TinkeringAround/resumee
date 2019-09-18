@@ -9,10 +9,10 @@ import Contact from './contact'
 //=========================================================
 const Left: FC = () => {
   return (
-    <Box width="50%" height="100%">
+    <Box width="50%" height="100%" pad="0.25em 0 0 0">
       <Box width="100%" justify="center" align="center">
-        <Hobbies />
         <Skills />
+        <Hobbies />
         <Contact />
       </Box>
     </Box>

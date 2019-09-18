@@ -5,7 +5,7 @@ import { Box } from 'grommet'
 import Button from '../../atoms/button'
 
 // Consts
-const links = ['About me', 'Curriculum Vitae', 'Projects']
+const links = ['About Me', 'Curriculum Vitae', 'Projects']
 const hrefs = ['aboutme', 'cv', 'projects']
 const labels = ['Goto About Me Section', 'Goto Curriculum Vitae Section', 'Goto Projects Section']
 
@@ -18,10 +18,16 @@ interface Props {
 const Navigation: FC<Props> = ({ expanded }) => {
   const listitem = {
     display: 'inline',
+    margin: '0 0.75em'
+  }
+
+  const button = {
+    textDecoration: 'none',
+    border: 'none',
+    background: 'transparent',
     fontSize: '1em',
     fontWeight: 600,
     fontFamily: 'Roboto Mono',
-    margin: '0 0.75em',
     cursor: 'pointer'
   }
 
@@ -52,17 +58,17 @@ const Navigation: FC<Props> = ({ expanded }) => {
           <ul style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
             {links.map((link: string, index: number) => (
               <li key={'Link-' + index} className="animated scale" style={listitem}>
-                <a
+                <button
                   className="animated goldHover dark whiteHover"
                   arial-label={labels[index]}
-                  style={{ textDecoration: 'none' }}
+                  style={button}
                   onClick={() => {
                     const goto = document.getElementById(hrefs[index])
                     if (goto) goto.scrollIntoView({ block: 'start', behavior: 'smooth' })
                   }}
                 >
                   {link}
-                </a>
+                </button>
               </li>
             ))}
           </ul>

@@ -11,7 +11,7 @@ const pathPrefix = './src/assets/'
 
 // ===============================================
 
-// Logo
+// Intro
 contentful
   .getEntries({
     content_type: 'intro',
@@ -20,13 +20,34 @@ contentful
   .then(results => {
     if (results.hasOwnProperty('items')) {
       const intro = {
-        title: results.items[0].fields['title'],
-        introImage: 'https:' + results.items[0].fields['introImage'].fields['file'].url,
-        profileImage: 'https:' + results.items[0].fields['profileImage'].fields['file'].url
+        title: results.items[0].fields['title']
       }
       fs.writeFileSync(pathPrefix + 'intro.json', JSON.stringify(intro, null, 2), 'utf-8')
     }
   })
-  .catch(error => console.log('Position:', error))
+  .catch(error => console.log('Intro:', error))
 
 // ===============================================
+
+// Curriculum Vitae
+contentful
+  .getEntries({
+    content_type: 'cv',
+    include: 2
+  })
+  .then(results => {
+    if (results.hasOwnProperty('items')) {
+      const cards = results.items[0].fields['cards'].map(step => {
+        return {
+          title: step.fields['title'],
+          location: {
+            name: step.fields['location'],
+            url: step.fields['url']
+          },
+          duration: step.fields['duration']
+        }
+      })
+      fs.writeFileSync(pathPrefix + 'cv.json', JSON.stringify(cards, null, 2), 'utf-8')
+    }
+  })
+  .catch(error => console.log('CV:', error))

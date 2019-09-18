@@ -10,6 +10,9 @@ import theme from './styles/theme'
 // Sections
 import Intro from './sections/intro/'
 import About from './sections/aboutme'
+import HireMe from './sections/hireme'
+import CV from './sections/cv'
+import Projects from './sections/projects'
 
 // Components
 import Navigation from './components/navigation'
@@ -27,6 +30,7 @@ const App: FC = () => {
       id="grommet"
       theme={theme}
       full
+      style={{ background: 'white' }}
       onScroll={event => {
         //@ts-ignore
         if (event.target.id === 'grommet') {
@@ -40,6 +44,9 @@ const App: FC = () => {
       <Navigation expanded={!scroll} />
       <Intro />
       <About />
+      <HireMe />
+      <CV />
+      {/* <Projects /> */}
     </Grommet>
   )
 }

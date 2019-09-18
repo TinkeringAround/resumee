@@ -1,7 +1,5 @@
 export type TIntro = {
   title: string
-  introImage: string
-  profileImage: string
 }
 
 //=========================================================
@@ -9,4 +7,15 @@ export type TIntro = {
 export type TIcon = {
   viewport: string
   path: JSX.Element
+}
+
+//=========================================================
+
+export type TCard = {
+  title: string
+  duration: string
+  location: {
+    name: string
+    url: string
+  }
 }

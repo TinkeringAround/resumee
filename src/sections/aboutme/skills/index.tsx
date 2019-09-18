@@ -16,7 +16,7 @@ const Skills: FC = () => {
   const borderRadius = 3
 
   return (
-    <Box width="100%" direction="row" margin="0 0 2em 0">
+    <Box width="100%" direction="row" margin="0 0 1em 0">
       <Box width="30%" justify="center" align="center">
         <Heading level="3" color="black" margin="0">
           Skills

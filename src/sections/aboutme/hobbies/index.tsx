@@ -7,7 +7,7 @@ const hobbies = [
   'Fitness,',
   'Programming,',
   'Technologie,',
-  'Family & Friends',
+  'Family & Friends,',
   'Travelling'
 ]
 
@@ -24,7 +24,7 @@ const Hobbies: FC = () => {
         {hobbies.map((hobby: string, index: number) => (
           <Text
             key={'Hobby-' + index}
-            color="gold"
+            color="dark"
             size="0.9em"
             style={{ fontWeight: 600, marginRight: '0.5em' }}
           >
