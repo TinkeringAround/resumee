@@ -7,16 +7,14 @@ import Hobbies from './hobbies/'
 import Contact from './contact'
 
 //=========================================================
-const Left: FC = () => {
-  return (
-    <Box width="50%" height="100%" pad="0.25em 0 0 0">
-      <Box width="100%" justify="center" align="center">
-        <Skills />
-        <Hobbies />
-        <Contact />
-      </Box>
+const Left: FC = () => (
+  <Box width="50%" height="100%" pad="0.25em 0 0 0">
+    <Box width="100%" justify="center" align="center">
+      <Skills />
+      <Hobbies />
+      <Contact />
     </Box>
-  )
-}
+  </Box>
+)
 
 export default Left

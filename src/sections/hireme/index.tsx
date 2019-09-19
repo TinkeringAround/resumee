@@ -24,7 +24,9 @@ const HireMe: FC = () => {
         >
           <Button text="" onClick={null} inverse>
             <Box direction="row" justify="around" align="center">
-              <Text style={{ wordSpacing: 0 }}>Hire me</Text>
+              <Text className="noFlickr" style={{ wordSpacing: 0 }}>
+                Hire me
+              </Text>
             </Box>
           </Button>
         </a>

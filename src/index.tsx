@@ -46,7 +46,7 @@ const App: FC = () => {
       <About />
       <HireMe />
       <CV />
-      {/* <Projects /> */}
+      <Projects />
     </Grommet>
   )
 }

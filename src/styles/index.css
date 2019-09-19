@@ -182,6 +182,12 @@ body {
   position: fixed;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Fonts */
 .mono {
   font-family: 'Roboto Mono';
@@ -207,6 +213,18 @@ body {
 }
 
 /* Effects */
+.noFlickr {
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
 .animated {
   transition: 0.35s ease;
 }

@@ -1,4 +1,4 @@
-import { TIntro, TCard } from '.'
+import { TIntro, TCard, TProject, TSkill } from '.'
 
 //=========================================================
 declare module 'intro.json' {
@@ -6,7 +6,22 @@ declare module 'intro.json' {
   export default intro
 }
 
+declare module 'skills.json' {
+  const skills: Array<TSkill>
+  export default skills
+}
+
+declare module 'hobbies.json' {
+  const hobbies: Array<string>
+  export default hobbies
+}
+
 declare module 'cv.json' {
   const cv: Array<TCard>
   export default cv
+}
+
+declare module 'projects.json' {
+  const projects: Array<TProject>
+  export default projects
 }

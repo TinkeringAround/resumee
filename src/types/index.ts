@@ -1,6 +1,12 @@
 export type TIntro = {
   title: string
 }
+//=========================================================
+
+export type TSkill = {
+  title: string
+  percentage: number
+}
 
 //=========================================================
 
@@ -18,4 +24,13 @@ export type TCard = {
     name: string
     url: string
   }
+}
+
+//=========================================================
+export type TProject = {
+  title: string
+  type: string
+  url: string
+  date: string
+  image: string
 }

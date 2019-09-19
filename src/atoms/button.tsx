@@ -15,6 +15,7 @@ const Button: FC<Props> = ({ children, text, onClick, size = '1.25em', inverse =
     fontSize: size,
     padding: '0.5em',
     fontWeight: 900,
+    borderStyle: 'solid',
     borderWidth: 3,
     letterSpacing: '0.01em',
     background: 'transparent',
@@ -24,7 +25,7 @@ const Button: FC<Props> = ({ children, text, onClick, size = '1.25em', inverse =
 
   return (
     <button
-      className={'animated scaleWeak goldHover ' + (inverse ? 'white' : 'dark')}
+      className={'animated noFlickr scaleWeak goldHover ' + (inverse ? 'white' : 'dark')}
       style={style}
       onClick={onClick}
     >
