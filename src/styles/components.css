@@ -1,0 +1,27 @@
+/* Components */
+button:focus {
+  outline: 0;
+}
+
+.polygon {
+  -webkit-clip-path: polygon(50% 12%, 100% 0, 100% 100%, 0 100%, 0 0);
+  clip-path: polygon(50% 12%, 100% 0, 100% 100%, 0 100%, 0 0);
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--light);
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--dark);
+}

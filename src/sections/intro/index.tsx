@@ -1,54 +1,54 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { Box, Heading, Text } from 'grommet'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 // Styles
 import '../../../node_modules/react-lazy-load-image-component/src/effects/opacity.css'
 
+// Components
+import Scroller from '../../components/scroller'
+
 // Assets
 import intro from '../../assets/intro.json'
 
 //=========================================================
-interface Props {}
-
-//=========================================================
-const Intro: React.FC<Props> = () => {
+const Intro: FC = () => {
   const introTop = 200
 
   return (
-    <>
+    <Box
+      id="welcome"
+      className="relative"
+      width="100%"
+      height={window.innerHeight + 'px'}
+      background="background"
+    >
       <Box
-        id="welcome"
-        className="relative"
+        className="absolute"
         width="100%"
-        height={window.innerHeight + 'px'}
-        background="background"
+        style={{ top: introTop, left: 0, zIndex: 5 }}
+        justify="center"
+        align="center"
       >
-        <Box
-          className="absolute"
-          width="100%"
-          style={{ top: introTop, left: 0, zIndex: 5 }}
-          justify="center"
-          align="center"
+        <Heading level="1" color="white" margin="0.25em 0 0.5em 0">
+          {"I'm ".toUpperCase()}
+          <u>{'Thomas Maier'.toUpperCase()}</u>
+        </Heading>
+        <Text
+          color="dark"
+          size="1.25em"
+          textAlign="center"
+          style={{
+            letterSpacing: '0.1em',
+            fontWeight: 600
+          }}
         >
-          <Heading level="1" color="white" margin="0.25em 0 0.5em 0">
-            {"I'm ".toUpperCase()}
-            <u>{'Thomas Maier'.toUpperCase()}</u>
-          </Heading>
-          <Text
-            color="dark"
-            size="1.25em"
-            textAlign="center"
-            style={{
-              letterSpacing: '0.1em',
-              fontWeight: 600
-            }}
-          >
-            Fullstack Developer.
-          </Text>
-        </Box>
-        <Box className="absolute" width="45%" style={{ right: 0, bottom: 0 }}>
-          {/* <LazyLoadImage
+          Fullstack Developer.
+        </Text>
+      </Box>
+      <Scroller />
+      <Box className="absolute" width="45%" style={{ right: 0, bottom: 0 }}>
+        {/* <LazyLoadImage
           alt={intro.title}
           effect="opacity"
           src={intro.url + `?fm=jpg&fl=progressive&fit=thumb`}
@@ -58,9 +58,8 @@ const Intro: React.FC<Props> = () => {
           height="100%"
           style={{ objectFit: 'cover' }}
         /> */}
-        </Box>
       </Box>
-    </>
+    </Box>
   )
 }
 

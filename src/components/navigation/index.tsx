@@ -18,7 +18,7 @@ interface Props {
 const Navigation: FC<Props> = ({ expanded }) => (
   <ResponsiveContext.Consumer>
     {size => {
-      // const isMobile = size.includes('small')
+      const isMobile = size.includes('small')
       const isMedium = size.includes('medium')
 
       const listitem = {
@@ -52,9 +52,9 @@ const Navigation: FC<Props> = ({ expanded }) => (
         >
           <Box margin="0 0 0 2em">
             <Button
-              text="Thomas Maier"
-              inverse={expanded}
-              size={expanded ? '1em' : '0.8em'}
+              text={isMobile ? 'TM' : 'Thomas Maier'}
+              color={expanded ? 'dark' : 'gold'}
+              fontSize={isMobile ? (expanded ? '0.9em' : '0.8em') : expanded ? '1em' : '0.8em'}
               onClick={() => {
                 const welcome = document.getElementById('welcome')
                 if (welcome) welcome.scrollIntoView({ block: 'end', behavior: 'smooth' })
@@ -62,25 +62,27 @@ const Navigation: FC<Props> = ({ expanded }) => (
             />
           </Box>
           <Box>
-            <nav style={{ margin: '0 1em 0 0' }}>
-              <ul style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
-                {links.map((link: string, index: number) => (
-                  <li key={'Link-' + index} className="animated noFlickr scale" style={listitem}>
-                    <button
-                      className="animated noFlickr goldHover dark whiteHover"
-                      arial-label={labels[index]}
-                      style={button}
-                      onClick={() => {
-                        const goto = document.getElementById(hrefs[index])
-                        if (goto) goto.scrollIntoView({ block: 'start', behavior: 'smooth' })
-                      }}
-                    >
-                      {link}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </nav>
+            {!isMobile && (
+              <nav style={{ margin: '0 1em 0 0' }}>
+                <ul style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
+                  {links.map((link: string, index: number) => (
+                    <li key={'Link-' + index} className="animated noFlickr scale" style={listitem}>
+                      <button
+                        className="animated noFlickr dark goldHover"
+                        arial-label={labels[index]}
+                        style={button}
+                        onClick={() => {
+                          const goto = document.getElementById(hrefs[index])
+                          if (goto) goto.scrollIntoView({ block: 'start', behavior: 'smooth' })
+                        }}
+                      >
+                        {link}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            )}
           </Box>
         </Box>
       )

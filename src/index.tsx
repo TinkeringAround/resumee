@@ -4,7 +4,11 @@ import * as serviceWorker from './utility/serviceWorker'
 import { Grommet } from 'grommet'
 
 // Styles
-import './styles/index.css'
+import './styles/fonts.css'
+import './styles/colors.css'
+import './styles/modifier.css'
+import './styles/effects.css'
+import './styles/components.css'
 import theme from './styles/theme'
 
 // Sections
@@ -13,6 +17,7 @@ import About from './sections/aboutme'
 import HireMe from './sections/hireme'
 import CV from './sections/cv'
 import Projects from './sections/projects'
+import Footer from './sections/footer'
 
 // Components
 import Navigation from './components/navigation'
@@ -30,7 +35,7 @@ const App: FC = () => {
       id="grommet"
       theme={theme}
       full
-      style={{ background: 'white' }}
+      color="white"
       onScroll={event => {
         //@ts-ignore
         if (event.target.id === 'grommet') {
@@ -47,6 +52,7 @@ const App: FC = () => {
       <HireMe />
       <CV />
       <Projects />
+      <Footer />
     </Grommet>
   )
 }

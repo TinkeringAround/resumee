@@ -14,16 +14,23 @@ import steps from '../../assets/cv.json'
 const CV: FC = () => (
   <ResponsiveContext.Consumer>
     {size => {
+      const isMobile = size.includes('small')
       const isMedium = size.includes('medium')
       const isMiddle = size.includes('middle')
 
       return (
-        <Box id="cv" background="white" justify="center" align="center" pad="8em 0">
+        <Box
+          id="cv"
+          background="white"
+          justify="center"
+          align="center"
+          pad={isMobile ? '5em 0' : '8em 0'}
+        >
           <Heading
             className="mono"
             level="1"
             margin="0.5em 0 0.25em 0"
-            size="2.5em"
+            size={isMobile ? '2em' : '2.5em'}
             color="dark"
             textAlign="center"
             style={{
@@ -37,15 +44,12 @@ const CV: FC = () => (
             color="light"
             size="1em"
             textAlign="center"
-            style={{
-              letterSpacing: '0.1em',
-              fontWeight: 600
-            }}
+            style={{ padding: isMobile ? '0 .5em' : '0' }}
           >
-            Where I aquired my developer skills.
+            Where I aquired my <strong>developer skills.</strong>
           </Text>
           <Box
-            width={isMedium ? '80%' : isMiddle ? '70%' : '60%'}
+            width={isMobile ? '90%' : isMedium ? '80%' : isMiddle ? '60%' : '50%'}
             direction="column"
             margin="4em auto 4em auto"
             wrap

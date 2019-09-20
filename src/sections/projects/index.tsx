@@ -12,18 +12,19 @@ import projects from '../../assets/projects.json'
 const Projects: FC = () => (
   <ResponsiveContext.Consumer>
     {size => {
+      const isMobile = size.includes('small')
       const isMedium = size.includes('medium')
       const isMiddle = size.includes('middle')
 
       const parsedLength = parseInt(projects.length / 2 + '')
-      const heightMultiplicator = parsedLength + 1
+      const heightMultiplicator = isMobile ? projects.length + 1 : parsedLength + 1
 
       return (
         <Box id="projects" className="polygon" width="100%" background="background">
           <Box
-            width={isMedium || isMiddle ? '80%' : '60%'}
+            width={isMobile ? '90%' : isMedium || isMiddle ? '80%' : '60%'}
             margin="0 auto"
-            pad="12em 0 0 0"
+            pad={isMobile ? '6em 0' : '12em 0 0 0'}
             align="center"
           >
             <Heading
@@ -45,18 +46,18 @@ const Projects: FC = () => (
               size="1em"
               margin="0 0 1em 0"
               textAlign="center"
-              style={{
-                letterSpacing: '0.1em',
-                fontWeight: 600
-              }}
+              style={{ padding: isMobile ? '0 .5em' : '0' }}
             >
-              Where I have already proven my skills.
+              Where I have <strong>improved my skills.</strong>
             </Text>
 
             <Box
               width="100%"
               height={
-                heightMultiplicator * window.innerWidth * (isMedium || isMiddle ? 0.8 : 0.6) * 0.5 +
+                heightMultiplicator *
+                  window.innerWidth *
+                  (isMobile ? 0.9 : isMedium || isMiddle ? 0.8 : 0.6) *
+                  0.5 +
                 'px'
               }
               margin="2em 0"
@@ -67,37 +68,41 @@ const Projects: FC = () => (
                 return (
                   <Box
                     key={'Project-' + index}
-                    className="relative animated noFlickr shadow scaleWeakest"
-                    width="48%"
-                    height={parsedLength > 0 ? '48%' : '98%'}
-                    background="white"
+                    className="relative animated noFlickr shadow"
+                    width={isMobile ? '98%' : '48%'}
+                    height={parsedLength > 0 && !isMobile ? '48%' : '98%'}
                     margin="1%"
-                    pad="1em"
+                    style={{ overflow: 'hidden' }}
                   >
                     <Box
                       className="absolute"
                       pad="1em"
                       justify="center"
-                      style={{ bottom: '2em', left: '2em', zIndex: 2 }}
+                      style={{
+                        bottom: isMobile ? '1em' : '2em',
+                        left: isMobile ? '1em' : '2em',
+                        zIndex: 3
+                      }}
                     >
                       <Heading
-                        className="mono noFlickr"
+                        className="mono"
                         level="3"
-                        size="1.5em"
+                        size={isMobile ? '1.25em' : '1.75em'}
                         margin="0"
                         color="white"
                         style={{ fontWeight: 600 }}
                       >
                         {project.title}
                       </Heading>
-                      <Text className="noFlickr" size="1em" color="white">
+                      <Text size={isMobile ? '0.75em' : '1em'} color="white">
                         {project.type}
                       </Text>
-                      <Text className="noFlickr" size="0.75em" color="white">
+                      <Text size={isMobile ? '0.5em' : '0.75em'} color="white">
                         {project.date}
                       </Text>
                     </Box>
                     <a
+                      className="animated noFlickr scale"
                       aria-label={project.title}
                       href={project.url}
                       target="_blank"

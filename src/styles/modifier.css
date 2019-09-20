@@ -1,0 +1,48 @@
+/* Styles */
+body {
+  margin: 0;
+  font-size: 14px;
+  font-family: 'Roboto';
+  background: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+}
+
+/* Modifier */
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+/* Fonts */
+.mono {
+  font-family: 'Roboto Mono';
+}
+
+/* Colors */
+.white {
+  color: white;
+  fill: white;
+  border-color: white;
+}
+
+.dark {
+  color: var(--dark);
+  fill: var(--dark);
+  border-color: var(--dark);
+}
+
+.gold {
+  color: var(--gold);
+  fill: var(--gold);
+  border-color: var(--gold);
+}

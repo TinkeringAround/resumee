@@ -12,16 +12,25 @@ const Skills: FC = () => (
   <ResponsiveContext.Consumer>
     {size => {
       const borderRadius = 3
+      const isMobile = size.includes('small')
       const isMedium = size.includes('medium')
 
       return (
-        <Box width="100%" direction="row" margin="0 0 1em 0">
-          <Box width="30%" align="center">
-            <Heading level="3" color="black" margin="0">
-              Skills
-            </Heading>
-          </Box>
-          <Box height="100%" width="70%" direction="column" align="end">
+        <Box
+          width="100%"
+          direction={isMobile ? 'column' : 'row'}
+          margin="0 0 1em 0"
+          justify="between"
+        >
+          <Heading
+            level="3"
+            color="dark"
+            margin={isMobile ? '0 auto 0.5em auto' : isMedium ? '0 0 0 1em' : '0 0 0 2em'}
+            size={isMedium ? '1.25em' : '1.5em'}
+          >
+            Skills
+          </Heading>
+          <Box height="100%" width={isMobile ? '100%' : '75%'} direction="column" align="end">
             {skills.map((skill: TSkill, index: number) => {
               return (
                 <Box
@@ -29,6 +38,7 @@ const Skills: FC = () => (
                   width="100%"
                   direction="row"
                   align="center"
+                  justify={isMobile ? 'center' : 'start'}
                   margin="0 0 1.5em 0"
                 >
                   <Box
@@ -37,22 +47,30 @@ const Skills: FC = () => (
                     style={{ borderRadius: borderRadius }}
                   >
                     <Box
-                      className="goldBackground"
+                      className="darkBackground"
                       width={skill.percentage + '%'}
-                      background="dark"
-                      pad="0 1.5em"
+                      background="gold"
+                      pad={isMobile ? '0 0.5em' : '0 1.5em'}
                       style={{ borderRadius: borderRadius }}
                     >
                       <Text
                         color="white"
-                        size={isMedium ? '0.8em' : '0.9em'}
-                        style={{ fontWeight: 600, letterSpacing: '0.1em', padding: '0.25em' }}
+                        size={isMobile ? '0.7em' : isMedium ? '0.8em' : '0.9em'}
+                        style={{
+                          fontWeight: 600,
+                          letterSpacing: '0.1em',
+                          padding: '0.25em'
+                        }}
                       >
                         {skill.title}
                       </Text>
                     </Box>
                   </Box>
-                  <Text color="gold" size="0.9em" style={{ fontWeight: 600, marginLeft: '1em' }}>
+                  <Text
+                    color="gold"
+                    size={isMobile ? '0.8em' : '0.9em'}
+                    style={{ fontWeight: 600, marginLeft: '1em' }}
+                  >
                     {skill.percentage + '%'}
                   </Text>
                 </Box>
