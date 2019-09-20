@@ -27,10 +27,9 @@ const CV: FC = () => (
           pad={isMobile ? '5em 0' : '8em 0'}
         >
           <Heading
-            className="mono"
             level="1"
             margin="0.5em 0 0.25em 0"
-            size={isMobile ? '2em' : '2.5em'}
+            size={isMobile ? '2em' : '3em'}
             color="dark"
             textAlign="center"
             style={{

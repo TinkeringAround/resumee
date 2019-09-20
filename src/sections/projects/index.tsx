@@ -24,14 +24,13 @@ const Projects: FC = () => (
           <Box
             width={isMobile ? '90%' : isMedium || isMiddle ? '80%' : '60%'}
             margin="0 auto"
-            pad={isMobile ? '6em 0' : '12em 0 0 0'}
+            pad={isMobile ? '6em 0' : '12em 0'}
             align="center"
           >
             <Heading
-              className="mono"
               level="1"
               margin="0.5em 0 0.25em 0"
-              size="2.5em"
+              size={isMobile ? '2em' : '3em'}
               color="dark"
               textAlign="center"
               style={{

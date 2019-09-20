@@ -35,7 +35,7 @@ const App: FC = () => {
       id="grommet"
       theme={theme}
       full
-      color="white"
+      style={{ background: 'white' }}
       onScroll={event => {
         //@ts-ignore
         if (event.target.id === 'grommet') {

@@ -1,20 +1,8 @@
 import React, { FC } from 'react'
 import { Box, Heading, ResponsiveContext } from 'grommet'
 
-// Types
-import { TIcon } from '../../../types'
-
-// Atoms
-import { email, facebook, linkedIn } from '../../../atoms/icons'
-
-// Consts
-const icons: Array<TIcon> = [email, facebook, linkedIn]
-const contacts = [
-  'mailto:maier.thomas94@gmail.com',
-  'https://www.facebook.com/thomas.maier.948',
-  'https://www.linkedin.com/in/maier-thomas94'
-]
-const labels = ['Write an Email to me', 'Check me out on Facebook', 'Check me out on LinkedIn']
+// Components
+import ContactIcons from '../../../components/contactIcons'
 
 //=========================================================
 const Contact: FC = () => (
@@ -22,7 +10,6 @@ const Contact: FC = () => (
     {size => {
       const isMobile = size.includes('small')
       const isMedium = size.includes('medium')
-      const iconSize = isMobile ? '30px' : '35px'
 
       return (
         <Box
@@ -48,43 +35,7 @@ const Contact: FC = () => (
             pad={isMobile ? '0' : '0 2em 0 0'}
             wrap
           >
-            {icons.map((i: TIcon, index: number) => {
-              return (
-                <Box
-                  key={'Contact-Icon-' + index}
-                  width={iconSize}
-                  height={iconSize}
-                  margin={index === icons.length - 1 ? '0' : '0 0.75em 0 0'}
-                  justify="center"
-                  align="center"
-                >
-                  <a
-                    className="center"
-                    aria-label={labels[index]}
-                    href={contacts[index]}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      textDecoration: 'none',
-                      width: '100%',
-                      height: '100%',
-                      display: 'flex',
-                      justifyContent: 'center',
-                      alignItems: 'center'
-                    }}
-                  >
-                    <svg
-                      className="animated gold darkHover"
-                      width={iconSize}
-                      height={iconSize}
-                      viewBox={i.viewport}
-                    >
-                      {i.path}
-                    </svg>
-                  </a>
-                </Box>
-              )
-            })}
+            <ContactIcons />
           </Box>
         </Box>
       )

@@ -20,10 +20,9 @@ const About: FC = () => (
           pad={isMobile ? '5em 1em' : '5em 0'}
         >
           <Heading
-            className="mono"
             level="1"
             margin="0.5em 0"
-            size={isMobile ? '2em' : '2.5em'}
+            size={isMobile ? '2em' : '3em'}
             color="dark"
             textAlign="center"
             style={{

@@ -68,7 +68,7 @@ contentful
       )
     }
   })
-  .catch(error => console.log('Skills:', error))
+  .catch(error => console.log('Skills & Hobbies:', error))
 
 // ===============================================
 
