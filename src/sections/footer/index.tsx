@@ -33,11 +33,6 @@ const Footer: FC = () => (
           <Box width="60%" margin="4em auto 1em" justify="center">
             <Text size="0.75em" color="white" textAlign="center">
               Made with Love.
-              {!isMobile && (
-                <span role="img" aria-label="hearth">
-                  ️️❤️
-                </span>
-              )}
             </Text>
           </Box>
         </Box>

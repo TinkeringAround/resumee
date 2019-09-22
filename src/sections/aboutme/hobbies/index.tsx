@@ -10,6 +10,7 @@ const Hobbies: FC = () => (
     {size => {
       const isMobile = size.includes('small')
       const isMedium = size.includes('medium')
+      const isMiddle = size.includes('middle')
 
       return (
         <Box
@@ -22,7 +23,7 @@ const Hobbies: FC = () => (
             level="3"
             color="dark"
             margin={isMobile ? '0 0 0.5em' : isMedium ? '0 0 0 1em' : '0 0 0 2em'}
-            size={isMedium ? '1.25em' : '1.5em'}
+            size={isMedium ? '1.25em' : isMiddle ? '1.35em' : '1.45em'}
           >
             Hobbies
           </Heading>
