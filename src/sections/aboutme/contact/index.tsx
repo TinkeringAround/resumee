@@ -13,7 +13,7 @@ const Contact: FC = () => (
 
       return (
         <Box
-          width="100%"
+          width={isMobile ? '95%' : '100%'}
           direction={isMobile ? 'column' : 'row'}
           margin="0 0 2em 0"
           justify="between"
@@ -21,7 +21,7 @@ const Contact: FC = () => (
           <Heading
             level="3"
             color="dark"
-            margin={isMobile ? '0 auto 0.5em auto' : isMedium ? '0 0 0 1em' : '0 0 0 2em'}
+            margin={isMobile ? '0 0 0.5em' : isMedium ? '0 0 0 1em' : '0 0 0 2em'}
             size={isMedium ? '1.25em' : '1.5em'}
           >
             Contact
@@ -31,7 +31,6 @@ const Contact: FC = () => (
             width={isMobile ? '100%' : '75%'}
             direction="row"
             align="center"
-            justify={isMobile ? 'center' : 'start'}
             pad={isMobile ? '0' : '0 2em 0 0'}
             wrap
           >

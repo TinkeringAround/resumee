@@ -13,7 +13,7 @@ const Left: FC = () => (
       const isMobile = size.includes('small')
 
       return (
-        <Box width={isMobile ? '100%' : '50%'} height="100%" pad="0.25em 0 0 0">
+        <Box width={isMobile ? '95%' : '50%'} height="100%" pad="0.25em 0 0 0">
           <Box width="100%" justify="center" align="center">
             <Skills />
             <Hobbies />

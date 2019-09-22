@@ -17,7 +17,7 @@ const Skills: FC = () => (
 
       return (
         <Box
-          width="100%"
+          width={isMobile ? '95%' : '100%'}
           direction={isMobile ? 'column' : 'row'}
           margin="0 0 1em 0"
           justify="between"
@@ -25,7 +25,7 @@ const Skills: FC = () => (
           <Heading
             level="3"
             color="dark"
-            margin={isMobile ? '0 auto 0.5em auto' : isMedium ? '0 0 0 1em' : '0 0 0 2em'}
+            margin={isMobile ? '0 0 0.5em' : isMedium ? '0 0 0 1em' : '0 0 0 2em'}
             size={isMedium ? '1.25em' : '1.5em'}
           >
             Skills
@@ -38,11 +38,10 @@ const Skills: FC = () => (
                   width="100%"
                   direction="row"
                   align="center"
-                  justify={isMobile ? 'center' : 'start'}
                   margin="0 0 1.5em 0"
                 >
                   <Box
-                    width="80%"
+                    width={isMobile ? '85%' : '80%'}
                     background="rgba(176, 176, 176, 0.2)"
                     style={{ borderRadius: borderRadius }}
                   >
