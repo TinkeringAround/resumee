@@ -18,6 +18,7 @@ const theme = {
       }
     },
     colors: {
+      black: 'rgb(50,50,50)',
       background: 'rgb(232,232,232)',
       dark: 'rgb(95, 95, 95)',
       light: 'rgb(176, 176, 176)',

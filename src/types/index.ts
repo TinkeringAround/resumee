@@ -19,6 +19,7 @@ export type TIcon = {
 
 export type TCard = {
   title: string
+  activities: Array<string>
   duration: string
   location: {
     name: string

@@ -47,7 +47,7 @@ const Skills: FC = () => (
                     style={{ borderRadius: borderRadius }}
                   >
                     <Box
-                      className="darkBackground"
+                      className="animated darkBackground"
                       width={skill.percentage + '%'}
                       background="gold"
                       pad={isMobile ? '0 0.5em' : '0 1.5em'}

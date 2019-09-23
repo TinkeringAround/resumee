@@ -1,2 +1,3 @@
 declare module 'react-lazy-load-image-component'
 declare module 'react-portal'
+declare module 'styled-components'

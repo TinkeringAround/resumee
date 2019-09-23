@@ -31,7 +31,7 @@ const Projects: FC = () => (
               level="1"
               margin="0.5em 0 0.25em 0"
               size={isMobile ? '2em' : '3em'}
-              color="dark"
+              color="black"
               textAlign="center"
               style={{
                 letterSpacing: '0.01em',
@@ -41,7 +41,7 @@ const Projects: FC = () => (
               My Projects.
             </Heading>
             <Text
-              color="light"
+              color="dark"
               size="1em"
               margin="0 0 1em 0"
               textAlign="center"

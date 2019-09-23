@@ -24,7 +24,7 @@ const About: FC = () => (
               level="1"
               margin="0.5em 0"
               size={isMobile ? '2em' : '3em'}
-              color="dark"
+              color="black"
               textAlign="center"
               style={{
                 letterSpacing: '0.01em',

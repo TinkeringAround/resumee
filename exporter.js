@@ -83,6 +83,7 @@ contentful
       const cards = results.items[0].fields['cards'].map(step => {
         return {
           title: step.fields['title'],
+          activities: step.fields['activities'].split('\n'),
           location: {
             name: step.fields['location'],
             url: step.fields['url']

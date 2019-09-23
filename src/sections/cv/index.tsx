@@ -30,7 +30,7 @@ const CV: FC = () => (
             level="1"
             margin="0.5em 0 0.25em 0"
             size={isMobile ? '2em' : '3em'}
-            color="dark"
+            color="black"
             textAlign="center"
             style={{
               letterSpacing: '0.01em',
@@ -40,7 +40,7 @@ const CV: FC = () => (
             Curriculum Vitae.
           </Heading>
           <Text
-            color="light"
+            color="dark"
             size="1em"
             textAlign="center"
             style={{ padding: isMobile ? '0 .5em' : '0' }}
@@ -57,6 +57,7 @@ const CV: FC = () => (
               <Card
                 key={'Card-' + index}
                 title={step.title}
+                activities={step.activities}
                 location={step.location.name}
                 url={step.location.url}
                 duration={step.duration}
