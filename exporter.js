@@ -55,6 +55,13 @@ contentful
 
       const hobbies = results.items[0].fields['hobbies']
 
+      const languages = results.items[0].fields['languages'].map(skill => {
+        return {
+          title: skill.fields['title'],
+          percentage: skill.fields['percentage']
+        }
+      })
+
       fs.writeFileSync(
         pathPrefix + 'skills.json',
         JSON.stringify(shuffle(skills), null, 2),
@@ -66,9 +73,15 @@ contentful
         JSON.stringify(shuffle(hobbies), null, 2),
         'utf-8'
       )
+
+      fs.writeFileSync(
+        pathPrefix + 'languages.json',
+        JSON.stringify(shuffle(languages), null, 2),
+        'utf-8'
+      )
     }
   })
-  .catch(error => console.log('Skills & Hobbies:', error))
+  .catch(error => console.log('Skills, Hobbies & Languages:', error))
 
 // ===============================================
 

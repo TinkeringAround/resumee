@@ -37,10 +37,7 @@ const Navigation: FC<Props> = ({ expanded }) => {
               direction="row"
               align="center"
               justify="between"
-              style={{
-                zIndex: 10,
-                boxShadow: expanded ? 'none' : '0px 5px 5px 5px rgba(0, 0, 0, 0.05)'
-              }}
+              style={{ zIndex: 10 }}
             >
               <Box margin="0 0 0 2em">
                 <Button
@@ -56,8 +53,8 @@ const Navigation: FC<Props> = ({ expanded }) => {
               <Box>
                 {isMobile ? (
                   <Text
-                    className="mono"
                     margin="0 2em 0 0"
+                    weight="bold"
                     color={expanded ? 'dark' : 'gold'}
                     onClick={() => setOpen(true)}
                   >

@@ -2,7 +2,6 @@ import React from 'react'
 import { Portal } from 'react-portal'
 import posed, { PoseGroup } from 'react-pose'
 import { Box, Text } from 'grommet'
-import theme from '../../styles/theme'
 
 // Components
 const Overlay = posed.div({
@@ -38,7 +37,7 @@ const Mobile: React.FC<Props> = ({ expanded, open, close, links, labels, hrefs }
     zIndex: 800,
     width: '100vw',
     height: window.innerHeight,
-    backgroundColor: theme.global.colors.background
+    backgroundColor: 'white'
   }
 
   return (
@@ -53,8 +52,9 @@ const Mobile: React.FC<Props> = ({ expanded, open, close, links, labels, hrefs }
                   onClick={close}
                   align="end"
                   justify="center"
+                  background="background"
                 >
-                  <Text className="mono" color="dark" margin="0 2em 0 0">
+                  <Text color="dark" weight="bold" margin="0 2em 0 0">
                     Close
                   </Text>
                 </Box>
@@ -65,7 +65,7 @@ const Mobile: React.FC<Props> = ({ expanded, open, close, links, labels, hrefs }
                         key={link}
                         alt={labels[index]}
                         className="relative"
-                        style={{ margin: '0 auto 2em auto' }}
+                        style={{ margin: '0 0 2em' }}
                         onClick={() => {
                           const element = document.getElementById(hrefs[index])
                           if (element)
@@ -73,7 +73,7 @@ const Mobile: React.FC<Props> = ({ expanded, open, close, links, labels, hrefs }
                           close()
                         }}
                       >
-                        <Text className="mono" size="2em" color="dark" textAlign="center">
+                        <Text size="2em" weight="bold" color="dark">
                           {link}
                         </Text>
                       </OverlayItem>

@@ -24,6 +24,7 @@ const Hobbies: FC = () => (
             color="dark"
             margin={isMobile ? '0 0 0.5em' : isMedium ? '0 0 0 1em' : '0 0 0 2em'}
             size={isMedium ? '1.25em' : isMiddle ? '1.35em' : '1.45em'}
+            style={{ fontWeight: 900 }}
           >
             Hobbies
           </Heading>
@@ -40,9 +41,11 @@ const Hobbies: FC = () => (
               <Text
                 key={'Hobby-' + index}
                 color="gold"
-                weight="bold"
-                size={isMobile ? '1em' : '1em'}
-                style={{ marginRight: index === hobbies.length - 1 ? 0 : '0.25em' }}
+                size={isMobile ? '0.85em' : '1em'}
+                style={{
+                  fontWeight: 600,
+                  marginRight: index === hobbies.length - 1 ? 0 : '0.25em'
+                }}
               >
                 {hobby + (index === hobbies.length - 1 ? '' : ',')}
               </Text>

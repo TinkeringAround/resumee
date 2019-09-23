@@ -28,13 +28,19 @@ const About: FC = () => (
               textAlign="center"
               style={{
                 letterSpacing: '0.01em',
-                fontWeight: 600
+                fontWeight: 900
               }}
             >
               Short facts about me.
             </Heading>
           )}
-          <Box width="100%" direction="row" margin={isMobile ? '3em 0' : '8em 0 4em 0'} wrap>
+          <Box
+            width="100%"
+            direction="row"
+            margin={isMobile ? '3em 0' : '8em 0 4em 0'}
+            justify="center"
+            wrap
+          >
             {!isMobile && <Left />}
             <Right />
             {isMobile && <Left />}

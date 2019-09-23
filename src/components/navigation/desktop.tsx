@@ -25,7 +25,6 @@ const Desktop: React.FC<Props> = ({ links, labels, hrefs }) => (
         background: 'transparent',
         fontSize: isMedium ? '0.9em' : '1em',
         fontWeight: 600,
-        fontFamily: 'Roboto Mono',
         cursor: 'pointer'
       }
 

@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { Box, Heading, Text } from 'grommet'
-import { LazyLoadImage } from 'react-lazy-load-image-component'
+// import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 // Styles
 import '../../../node_modules/react-lazy-load-image-component/src/effects/opacity.css'
@@ -9,7 +9,7 @@ import '../../../node_modules/react-lazy-load-image-component/src/effects/opacit
 import Scroller from '../../components/scroller'
 
 // Assets
-import intro from '../../assets/intro.json'
+// import intro from '../../assets/intro.json'
 
 //=========================================================
 const Intro: FC = () => {
@@ -40,25 +40,30 @@ const Intro: FC = () => {
           textAlign="center"
           style={{
             letterSpacing: '0.1em',
-            fontWeight: 600
+            fontWeight: 900
           }}
         >
           Fullstack Developer.
         </Text>
       </Box>
       <Scroller />
-      <Box className="absolute" width="45%" style={{ right: 0, bottom: 0 }}>
-        {/* <LazyLoadImage
+      {/* <Box
+        className="absolute"
+        width={window.innerWidth / 2 + 'px'}
+        height="500px"
+        style={{ right: window.innerWidth / 4, bottom: 100 }}
+      >
+        <LazyLoadImage
           alt={intro.title}
           effect="opacity"
-          src={intro.url + `?fm=jpg&fl=progressive&fit=thumb`}
+          src={me}
           scrollPosition={false}
           visibleByDefault={false}
           width="100%"
           height="100%"
-          style={{ objectFit: 'cover' }}
-        /> */}
-      </Box>
+          style={{ objectFit: 'contain' }}
+        />
+      </Box> */}
     </Box>
   )
 }

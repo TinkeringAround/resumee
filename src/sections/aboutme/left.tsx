@@ -4,7 +4,7 @@ import { Box, ResponsiveContext } from 'grommet'
 // Partials
 import Skills from './skills/'
 import Hobbies from './hobbies/'
-import Contact from './contact'
+import Languages from './languages/'
 
 //=========================================================
 const Left: FC = () => (
@@ -17,7 +17,7 @@ const Left: FC = () => (
           <Box width="100%" justify="center" align="center">
             <Skills />
             <Hobbies />
-            <Contact />
+            <Languages />
           </Box>
         </Box>
       )

@@ -2,13 +2,13 @@ import React, { FC } from 'react'
 import { Box, Heading, Text, ResponsiveContext } from 'grommet'
 
 // Types
-import { TSkill } from '../../../types/index.js'
+import { TSkill } from '../../../types'
 
 // Assets
-import skills from '../../../assets/skills.json'
+import languages from '../../../assets/languages.json'
 
 //=========================================================
-const Skills: FC = () => (
+const Languages: FC = () => (
   <ResponsiveContext.Consumer>
     {size => {
       const borderRadius = 3
@@ -30,13 +30,13 @@ const Skills: FC = () => (
             size={isMedium ? '1.25em' : isMiddle ? '1.35em' : '1.45em'}
             style={{ fontWeight: 900 }}
           >
-            Skills
+            {isMobile ? 'Languages' : 'Langs.'}
           </Heading>
           <Box height="100%" width={isMobile ? '100%' : '75%'} direction="column" align="end">
-            {skills.map((skill: TSkill, index: number) => {
+            {languages.map((lang: TSkill, index: number) => {
               return (
                 <Box
-                  key={'Skill-' + index}
+                  key={'Language-' + index}
                   width="100%"
                   direction="row"
                   align="center"
@@ -49,7 +49,7 @@ const Skills: FC = () => (
                   >
                     <Box
                       className="animated darkBackground"
-                      width={skill.percentage + '%'}
+                      width={lang.percentage + '%'}
                       background="gold"
                       pad={isMobile ? '0 0.5em' : '0 1.5em'}
                       style={{ borderRadius: borderRadius }}
@@ -62,7 +62,7 @@ const Skills: FC = () => (
                           padding: '0.25em'
                         }}
                       >
-                        {skill.title}
+                        {lang.title}
                       </Text>
                     </Box>
                   </Box>
@@ -71,7 +71,7 @@ const Skills: FC = () => (
                     size={isMobile ? '0.8em' : '0.9em'}
                     style={{ fontWeight: 600, marginLeft: '1em' }}
                   >
-                    {skill.percentage + '%'}
+                    {lang.percentage + '%'}
                   </Text>
                 </Box>
               )
@@ -83,4 +83,4 @@ const Skills: FC = () => (
   </ResponsiveContext.Consumer>
 )
 
-export default Skills
+export default Languages

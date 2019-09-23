@@ -18,7 +18,7 @@ const HireMe: FC = () => (
           <Heading textAlign="center" level="2" color="white">
             I'm currently <u>available</u> for freelance work.
           </Heading>
-          <Box width={isMobile ? '60%' : '20%'}>
+          <Box width={isMobile ? '60%' : size.includes('medium') ? '20%' : '15%'}>
             <a
               aria-label={'Write me an Email'}
               href={mailToMe}

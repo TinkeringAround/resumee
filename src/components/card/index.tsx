@@ -10,7 +10,7 @@ import theme from '../../styles/theme'
 const MIN_HEIGHT = 150
 const MIN_HEIGHT_MOBILE = 125
 const HEIGHT_MULTIPLICATOR = 25
-const HEIGHT_MULTIPLICATOR_MOBILE = 30
+const HEIGHT_MULTIPLICATOR_MOBILE = 35
 const DURATION = 250
 const DURATION_MULTIPLICATOR = 50
 
@@ -102,15 +102,16 @@ const Card: FC<Props> = ({ title, activities, duration, location, url }) => {
                   className="animated noFlickr"
                   level="3"
                   size={isMobile ? '1em' : '1.25em'}
-                  color="black"
+                  color={expanded ? 'gold' : 'dark'}
                   margin="0 0 0.25em 0"
+                  style={{ fontWeight: 900 }}
                 >
                   {title}
                 </Heading>
                 <Text
                   className="animated noFlickr"
                   size={isMobile ? '0.6em' : '0.8em'}
-                  color={expanded ? 'light' : 'dark'}
+                  color={expanded ? 'transparent' : 'dark'}
                   margin="0 0 0.5em"
                 >
                   {duration}
@@ -152,8 +153,8 @@ const Card: FC<Props> = ({ title, activities, duration, location, url }) => {
                     }}
                   >
                     <Text
-                      className="animated noFlickr mono dark goldHover"
-                      size={isMobile ? '0.65em' : '0.7em'}
+                      className="animated noFlickr dark goldHover"
+                      size={isMobile ? '0.7em' : '0.8em'}
                       style={{ fontWeight: 600 }}
                     >
                       {location}

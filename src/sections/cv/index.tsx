@@ -34,7 +34,7 @@ const CV: FC = () => (
             textAlign="center"
             style={{
               letterSpacing: '0.01em',
-              fontWeight: 600
+              fontWeight: 900
             }}
           >
             Curriculum Vitae.

@@ -35,7 +35,7 @@ const Projects: FC = () => (
               textAlign="center"
               style={{
                 letterSpacing: '0.01em',
-                fontWeight: 600
+                fontWeight: 900
               }}
             >
               My Projects.
@@ -84,7 +84,6 @@ const Projects: FC = () => (
                       }}
                     >
                       <Heading
-                        className="mono"
                         level="3"
                         size={isMobile ? '1.25em' : '1.75em'}
                         margin="0"

@@ -4,7 +4,6 @@ import * as serviceWorker from './utility/serviceWorker'
 import { Grommet } from 'grommet'
 
 // Styles
-import './styles/fonts.css'
 import './styles/colors.css'
 import './styles/modifier.css'
 import './styles/effects.css'

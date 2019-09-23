@@ -16,6 +16,11 @@ declare module 'hobbies.json' {
   export default hobbies
 }
 
+declare module 'languages.json' {
+  const languages: Array<TSkill>
+  export default languages
+}
+
 declare module 'cv.json' {
   const cv: Array<TCard>
   export default cv

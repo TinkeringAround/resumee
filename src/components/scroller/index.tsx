@@ -13,7 +13,7 @@ const Scroller: FC = () => (
     <Box
       className="relative"
       height="50px"
-      width="3px"
+      width="5px"
       margin="0 0 20px 0"
       style={{ borderRadius: 3, overflow: 'hidden' }}
     >
