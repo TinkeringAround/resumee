@@ -12,60 +12,57 @@ import Scroller from '../../components/scroller'
 // import intro from '../../assets/intro.json'
 
 //=========================================================
-const Intro: FC = () => {
-  const introTop = 200
-
-  return (
-    <Box
-      id="welcome"
-      className="relative"
-      width="100%"
-      height={window.innerHeight + 'px'}
-      background="background"
-    >
-      <Box
-        className="absolute"
-        width="100%"
-        style={{ top: introTop, left: 0, zIndex: 5 }}
-        justify="center"
-        align="center"
-      >
-        <Heading level="1" color="white" margin="0.25em 0 0.5em 0">
-          {"I'm ".toUpperCase()}
-          <u>{'Thomas Maier'.toUpperCase()}</u>
-        </Heading>
-        <Text
-          color="dark"
-          size="1.25em"
-          textAlign="center"
-          style={{
-            letterSpacing: '0.1em',
-            fontWeight: 900
-          }}
-        >
-          Fullstack Developer.
-        </Text>
-      </Box>
-      <Scroller />
-      {/* <Box
-        className="absolute"
-        width={window.innerWidth / 2 + 'px'}
-        height="500px"
-        style={{ right: window.innerWidth / 4, bottom: 100 }}
-      >
-        <LazyLoadImage
-          alt={intro.title}
-          effect="opacity"
-          src={me}
-          scrollPosition={false}
-          visibleByDefault={false}
-          width="100%"
-          height="100%"
-          style={{ objectFit: 'contain' }}
-        />
-      </Box> */}
-    </Box>
-  )
+interface Props {
+  top: number
 }
 
+//=========================================================
+const Intro: FC<Props> = ({ top }) => (
+  <Box
+    id="welcome"
+    className="relative"
+    width="100%"
+    height={window.innerHeight + 'px'}
+    background="white"
+  >
+    <Box
+      className="absolute"
+      width="40%"
+      justify="center"
+      style={{ top: top, left: '10%', zIndex: 5 }}
+    >
+      <Heading className="gradient" level="1" margin="0" style={{ fontWeight: 900 }}>
+        {"I'm Thomas Maier".toUpperCase()}
+      </Heading>
+      <Text
+        color="grey"
+        size="1.25em"
+        style={{
+          letterSpacing: '0.1em',
+          fontWeight: 600
+        }}
+      >
+        Fullstack Developer.
+      </Text>
+    </Box>
+    <Scroller />
+    {/* <Box
+      className="absolute"
+      width={window.innerWidth / 2 + 'px'}
+      height="500px"
+      style={{ right: window.innerWidth / 4, bottom: 100 }}
+    >
+      <LazyLoadImage
+        alt={intro.title}
+        effect="opacity"
+        src={me}
+        scrollPosition={false}
+        visibleByDefault={false}
+        width="100%"
+        height="100%"
+        style={{ objectFit: 'contain' }}
+      />
+    </Box> */}
+  </Box>
+)
 export default Intro

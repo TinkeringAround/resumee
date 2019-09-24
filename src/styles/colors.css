@@ -3,4 +3,53 @@
   --dark: rgb(95, 95, 95);
   --light: rgb(176, 176, 176);
   --gold: rgb(154, 129, 103);
+
+  /* New Colors */
+  --grey: rgb(95, 95, 95);
+  --blue: rgb(36, 32, 135);
+  --red: #f0232d;
+  --pink: #e60064;
+}
+
+/* Colors */
+.dark {
+  color: var(--dark);
+  fill: var(--dark);
+  border-color: var(--dark);
+}
+
+.gold {
+  color: var(--gold);
+  fill: var(--gold);
+  border-color: var(--gold);
+}
+
+/* New Colors */
+.white {
+  color: white;
+  fill: white;
+  border-color: white;
+}
+
+.blue {
+  color: var(--blue);
+  fill: var(--blue);
+  border-color: var(--blue);
+}
+
+.gradient {
+  color: var(--red);
+  color: linear-gradient(180deg, rgba(240, 35, 45, 1) 30%, rgba(230, 0, 100, 1) 100%);
+
+  border-color: var(--red);
+  border-color: linear-gradient(180deg, rgba(240, 35, 45, 1) 30%, rgba(230, 0, 100, 1) 100%);
+
+  fill: var(--red);
+  fill: linear-gradient(180deg, rgba(240, 35, 45, 1) 30%, rgba(230, 0, 100, 1) 100%);
+}
+
+/* Backgrounds */
+.gradientBackground {
+  background: var(--red);
+  background: linear-gradient(180deg, rgba(240, 35, 45, 1) 30%, rgba(230, 0, 100, 1) 100%);
 }

@@ -18,11 +18,11 @@ const Scroller: FC = () => (
       style={{ borderRadius: 3, overflow: 'hidden' }}
     >
       <Box
-        background="white"
+        className="gradientBackground"
         width="100%"
         height="100%"
         style={{
-          animation: 'scrolling 3s cubic-bezier(0.14, 1.12, 0.67, 0.99) 0s infinite',
+          animation: 'scrolling 3s cubic-bezier(0.14, 1.12, 0.67, 0.99) 1s infinite',
           borderRadius: 3
         }}
       ></Box>

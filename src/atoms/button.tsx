@@ -1,42 +1,65 @@
 import React, { FC } from 'react'
 import { ResponsiveContext } from 'grommet'
 
+// Atoms
+import { ArrowRight } from './icons'
+
 //=========================================================
 interface Props {
   text: string
-  onClick: any
+  onClick?: any
   fontSize?: string
-  color?: 'white' | 'dark' | 'gold'
+  uppercase?: boolean
+  arrow?: boolean
+  color?: 'white' | 'blue' | 'gradient'
 }
 
 //=========================================================
-const Button: FC<Props> = ({ children, text, onClick, fontSize = '1.25em', color = 'dark' }) => (
+const Button: FC<Props> = ({
+  text,
+  onClick = null,
+  uppercase = false,
+  arrow = false,
+  fontSize = '1.25em',
+  color = 'blue'
+}) => (
   <ResponsiveContext.Consumer>
     {size => {
       const isMobile = size.includes('small')
 
       const style = {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+
         width: '100%',
-        fontSize: fontSize,
-        padding: '0.5em',
-        fontFamily: 'Montserrat',
-        fontWeight: 900,
-        borderStyle: 'solid',
-        borderWidth: isMobile ? 3 : 5,
-        letterSpacing: '0.01em',
         background: 'transparent',
-        wordSpacing: '0.25em',
+        padding: '0.75em',
+
+        borderStyle: 'solid',
+        borderWidth: isMobile ? 3 : 4,
+
+        fontSize: fontSize,
+        fontWeight: 900,
+        letterSpacing: '0.01em',
+
         cursor: 'pointer'
       }
 
       return (
-        <button
-          className={'animated noFlickr scaleWeak ' + color + ' ' + (!isMobile ? 'goldHover' : '')}
-          style={style}
-          onClick={onClick}
-        >
-          {text.toUpperCase()}
-          {children}
+        <button className={'mont animated ' + color} style={style} onClick={onClick}>
+          {uppercase ? text.toUpperCase() : text}
+          {arrow && (
+            <svg
+              className={'icon ' + color}
+              width="1em"
+              height="1em"
+              viewBox={ArrowRight.viewport}
+              style={{ marginLeft: '1em' }}
+            >
+              {ArrowRight.path}
+            </svg>
+          )}
         </button>
       )
     }}

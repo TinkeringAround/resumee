@@ -7,7 +7,7 @@ import styled from 'styled-components'
 import theme from '../../styles/theme'
 
 // Consts
-const MIN_HEIGHT = 150
+const MIN_HEIGHT = 125
 const MIN_HEIGHT_MOBILE = 125
 const HEIGHT_MULTIPLICATOR = 25
 const HEIGHT_MULTIPLICATOR_MOBILE = 35
@@ -73,7 +73,7 @@ const Card: FC<Props> = ({ title, activities, duration, location, url }) => {
         const ul = { width: isMobile ? '95%' : '80%', margin: '0.5em 0 1em', padding: 0 }
         const li = {
           display: 'block',
-          margin: '0 0 0.75em',
+          margin: '0 0 0.5em',
           color: theme.global.colors.dark,
           fontSize: isMobile ? '0.75em' : '0.85em',
           lineHeight: '1.2em'
@@ -87,7 +87,7 @@ const Card: FC<Props> = ({ title, activities, duration, location, url }) => {
 
         return (
           <Accordion
-            className="animated shadow"
+            className="animated accordionElement"
             height={height}
             expandedHeight={expandedHeight}
             width="90%"
@@ -99,21 +99,16 @@ const Card: FC<Props> = ({ title, activities, duration, location, url }) => {
             <Box height="100%" width="100%" justify="between" align="end" direction="column">
               <Box width="100%" pad={isMobile ? '0' : '0 2em 0 0'}>
                 <Heading
-                  className="animated noFlickr"
+                  className="animated gradientHover"
                   level="3"
                   size={isMobile ? '1em' : '1.25em'}
-                  color={expanded ? 'gold' : 'dark'}
+                  color={expanded ? 'blue' : 'black'}
                   margin="0 0 0.25em 0"
                   style={{ fontWeight: 900 }}
                 >
                   {title}
                 </Heading>
-                <Text
-                  className="animated noFlickr"
-                  size={isMobile ? '0.6em' : '0.8em'}
-                  color={expanded ? 'transparent' : 'dark'}
-                  margin="0 0 0.5em"
-                >
+                <Text size={isMobile ? '0.4em' : '0.6em'} color="dark" margin="0 0 0.5em">
                   {duration}
                 </Text>
                 <ul style={ul}>
@@ -122,7 +117,7 @@ const Card: FC<Props> = ({ title, activities, duration, location, url }) => {
                       activities.map((activity: string, index: number) => (
                         <ListItem
                           key={'Activity-' + index}
-                          className="noFlickr"
+                          className="muli"
                           style={li}
                           enterMultiplicator={index + 1}
                           exitMultiplicator={activities.length - index}
@@ -153,7 +148,7 @@ const Card: FC<Props> = ({ title, activities, duration, location, url }) => {
                     }}
                   >
                     <Text
-                      className="animated noFlickr dark goldHover"
+                      className="animated noFlickr dark gradientHover"
                       size={isMobile ? '0.7em' : '0.8em'}
                       style={{ fontWeight: 600 }}
                     >

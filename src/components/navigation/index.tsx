@@ -1,25 +1,21 @@
 import React, { FC, useState } from 'react'
-import { Box, ResponsiveContext, Text } from 'grommet'
+import { Box, ResponsiveContext, Text, Heading } from 'grommet'
 
 // Atoms
 import Button from '../../atoms/button'
+import { ANavigation } from '../../atoms/animations'
 
 // Partials
-import Desktop from './desktop'
-import Mobile from './mobile'
-
-// Consts
-const links = ['About Me', 'Curriculum Vitae', 'Projects']
-const hrefs = ['aboutme', 'cv', 'projects']
-const labels = ['Goto About Me Section', 'Goto Curriculum Vitae Section', 'Goto Projects Section']
+import MenuDialog from './menuDialog'
 
 //=========================================================
 interface Props {
   expanded: boolean
+  pose: string
 }
 
 //=========================================================
-const Navigation: FC<Props> = ({ expanded }) => {
+const Navigation: FC<Props> = ({ expanded, pose }) => {
   const [open, setOpen] = useState<boolean>(false)
 
   return (
@@ -29,20 +25,19 @@ const Navigation: FC<Props> = ({ expanded }) => {
 
         return (
           <>
-            <Box
+            <ANavigation
               className="fixed animated"
+              pose={pose}
               height={expanded ? '100px' : '75px'}
-              width="100%"
+              width={isMobile ? '100%' : 'calc(100% - 10px)'}
               background={expanded ? 'transparent' : 'white'}
-              direction="row"
-              align="center"
-              justify="between"
-              style={{ zIndex: 10 }}
+              delay={1000}
             >
-              <Box margin="0 0 0 2em">
+              <Box margin={isMobile ? '0 0 0 2em' : '0 0 0 4em'}>
                 <Button
-                  text={isMobile ? 'TM' : 'Thomas Maier'}
-                  color={expanded ? 'dark' : 'gold'}
+                  text="TM"
+                  color="blue"
+                  uppercase
                   fontSize={isMobile ? (expanded ? '0.9em' : '0.8em') : expanded ? '1em' : '0.8em'}
                   onClick={() => {
                     const welcome = document.getElementById('welcome')
@@ -50,28 +45,17 @@ const Navigation: FC<Props> = ({ expanded }) => {
                   }}
                 />
               </Box>
-              <Box>
-                {isMobile ? (
-                  <Text
-                    margin="0 2em 0 0"
-                    weight="bold"
-                    color={expanded ? 'dark' : 'gold'}
-                    onClick={() => setOpen(true)}
-                  >
-                    Menu
-                  </Text>
-                ) : (
-                  <Desktop links={links} labels={labels} hrefs={hrefs} />
-                )}
+              <Box className="cursor" onClick={() => setOpen(true)}>
+                <Heading level="4" margin="0 2em 0 0" color="blue">
+                  Menu
+                </Heading>
               </Box>
-            </Box>
-            <Mobile
+            </ANavigation>
+            <MenuDialog
               expanded={expanded}
               open={open}
               close={() => setOpen(false)}
-              links={links}
-              labels={labels}
-              hrefs={hrefs}
+              isMobile={isMobile}
             />
           </>
         )

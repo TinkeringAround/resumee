@@ -23,21 +23,20 @@ body {
   position: fixed;
 }
 
-/* Colors */
-.white {
-  color: white;
-  fill: white;
-  border-color: white;
+/* Utility */
+.noScrolling {
+  overflow: hidden;
 }
 
-.dark {
-  color: var(--dark);
-  fill: var(--dark);
-  border-color: var(--dark);
+.cursor {
+  cursor: pointer;
 }
 
-.gold {
-  color: var(--gold);
-  fill: var(--gold);
-  border-color: var(--gold);
+/* Fonts */
+.mont {
+  font-family: 'Montserrat';
+}
+
+.muli {
+  font-family: 'Muli';
 }

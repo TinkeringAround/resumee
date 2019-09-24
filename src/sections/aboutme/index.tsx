@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Box, Heading, ResponsiveContext } from 'grommet'
+import { Box, ResponsiveContext } from 'grommet'
 
 // Partials
 import Right from './right'
@@ -15,35 +15,12 @@ const About: FC = () => (
         <Box
           id="aboutme"
           background="white"
-          justify="center"
           align="center"
-          pad={isMobile ? '3em 1em 5em' : '5em 0'}
+          pad={isMobile ? '3em 1em 5em' : '4em 0'}
         >
-          {!isMobile && (
-            <Heading
-              level="1"
-              margin="0.5em 0"
-              size={isMobile ? '2em' : '3em'}
-              color="black"
-              textAlign="center"
-              style={{
-                letterSpacing: '0.01em',
-                fontWeight: 900
-              }}
-            >
-              Short facts about me.
-            </Heading>
-          )}
-          <Box
-            width="100%"
-            direction="row"
-            margin={isMobile ? '3em 0' : '8em 0 4em 0'}
-            justify="center"
-            wrap
-          >
-            {!isMobile && <Left />}
+          <Box className="relative" width="100%" height="1000px" direction="row" justify="center">
+            <Left />
             <Right />
-            {isMobile && <Left />}
           </Box>
         </Box>
       )

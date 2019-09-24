@@ -2,9 +2,7 @@ import React, { FC } from 'react'
 import { Box, ResponsiveContext } from 'grommet'
 
 // Partials
-import Skills from './skills/'
-import Hobbies from './hobbies/'
-import Languages from './languages/'
+import Introduction from './introduction'
 
 //=========================================================
 const Left: FC = () => (
@@ -13,12 +11,14 @@ const Left: FC = () => (
       const isMobile = size.includes('small')
 
       return (
-        <Box width={isMobile ? '95%' : '50%'} height="100%" pad="0.25em 0 0 0">
-          <Box width="100%" justify="center" align="center">
-            <Skills />
-            <Hobbies />
-            <Languages />
-          </Box>
+        <Box
+          className="absolute shadow"
+          width={isMobile ? '90%' : '50%'}
+          background="white"
+          pad={isMobile ? '0' : '5em 6em'}
+          style={{ top: '5%', left: '5%', zIndex: 21 }}
+        >
+          <Introduction />
         </Box>
       )
     }}

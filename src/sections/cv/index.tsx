@@ -28,23 +28,14 @@ const CV: FC = () => (
         >
           <Heading
             level="1"
-            margin="0.5em 0 0.25em 0"
+            margin="0"
             size={isMobile ? '2em' : '3em'}
-            color="black"
-            textAlign="center"
-            style={{
-              letterSpacing: '0.01em',
-              fontWeight: 900
-            }}
+            color="blue"
+            style={{ fontWeight: 900 }}
           >
             Curriculum Vitae.
           </Heading>
-          <Text
-            color="dark"
-            size="1em"
-            textAlign="center"
-            style={{ padding: isMobile ? '0 .5em' : '0' }}
-          >
+          <Text color="dark" size="1em" style={{ padding: isMobile ? '0 .5em' : '0' }}>
             Where I aquired my <strong>developer skills.</strong>
           </Text>
           <Box

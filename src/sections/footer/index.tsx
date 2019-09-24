@@ -5,13 +5,24 @@ import { Box, Text, Heading, ResponsiveContext } from 'grommet'
 import ContactIcons from '../../components/contactIcons'
 
 //=========================================================
-const Footer: FC = () => (
+interface Props {
+  height: number
+}
+
+//=========================================================
+const Footer: FC<Props> = ({ height }) => (
   <ResponsiveContext.Consumer>
     {size => {
       const isMobile = size.includes('small')
 
       return (
-        <Box width="100%" height="400px" background="dark">
+        <Box
+          className="fixed"
+          width={isMobile ? '100%' : 'calc(100% - 10px)'}
+          height={height + 'px'}
+          background="dark"
+          style={{ bottom: 0, right: 0, left: 0, zIndex: 10 }}
+        >
           <Box width={isMobile ? '90%' : '60%'} margin="6em auto 2em" justify="center">
             <Heading
               level="2"

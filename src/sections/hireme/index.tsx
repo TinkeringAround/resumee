@@ -14,7 +14,7 @@ const HireMe: FC = () => (
       const isMobile = size.includes('small')
 
       return (
-        <Box width="100%" background="dark" justify="center" align="center" pad="6em 0 8em 0">
+        <Box width="100%" background="blue" justify="center" align="center" pad="6em 0 8em 0">
           <Heading textAlign="center" level="2" color="white">
             I'm currently <u>available</u> for freelance work.
           </Heading>
@@ -26,13 +26,7 @@ const HireMe: FC = () => (
               rel="noopener noreferrer"
               style={{ textDecoration: 'none' }}
             >
-              <Button text="" onClick={null} color="white">
-                <Box direction="row" justify="around" align="center">
-                  <Text className="noFlickr" style={{ wordSpacing: 0 }}>
-                    Hire me
-                  </Text>
-                </Box>
-              </Button>
+              <Button text="Hire Me" fontSize="1em" color="white" arrow></Button>
             </a>
           </Box>
         </Box>
