@@ -21,7 +21,7 @@ const Projects: FC = () => (
 
       return (
         <Box id="projects" width="100%" background="white">
-          <Box className="polygon" width="100%" background="background">
+          <Box width="100%">
             <Box
               width={isMobile ? '90%' : isMedium || isMiddle ? '80%' : '60%'}
               margin="0 auto"
@@ -32,7 +32,7 @@ const Projects: FC = () => (
                 level="1"
                 margin="0.5em 0 0.25em 0"
                 size={isMobile ? '2em' : '3em'}
-                color="black"
+                color="blue"
                 textAlign="center"
                 style={{
                   letterSpacing: '0.01em',

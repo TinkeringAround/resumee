@@ -2,7 +2,9 @@ import React, { FC } from 'react'
 import { Box, ResponsiveContext } from 'grommet'
 
 // Partials
-import Introduction from './introduction'
+import Skills from './skills'
+import Hobbies from './hobbies'
+import Languages from './languages'
 
 //=========================================================
 const Left: FC = () => (
@@ -18,7 +20,10 @@ const Left: FC = () => (
           pad={isMobile ? '0' : '5em 6em'}
           style={{ top: '5%', left: '5%', zIndex: 21 }}
         >
-          <Introduction />
+          {/* TODO */}
+          <Skills />
+          <Hobbies />
+          <Languages />
         </Box>
       )
     }}

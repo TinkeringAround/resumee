@@ -20,7 +20,7 @@ const Footer: FC<Props> = ({ height }) => (
           className="fixed"
           width={isMobile ? '100%' : 'calc(100% - 10px)'}
           height={height + 'px'}
-          background="dark"
+          background="blue"
           style={{ bottom: 0, right: 0, left: 0, zIndex: 10 }}
         >
           <Box width={isMobile ? '90%' : '60%'} margin="6em auto 2em" justify="center">
@@ -39,7 +39,7 @@ const Footer: FC<Props> = ({ height }) => (
             </Text>
           </Box>
           <Box width="60%" margin="0 auto" direction="row" justify="center">
-            <ContactIcons color="white" hover="goldHover" iconSize={50} />
+            <ContactIcons color="white" hover="darkHover" iconSize={50} />
           </Box>
           <Box width="60%" margin="4em auto 1em" justify="center">
             <Text size="0.75em" color="white" textAlign="center">

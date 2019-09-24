@@ -2,7 +2,6 @@ import React, { FC, useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import * as serviceWorker from './utility/serviceWorker'
 import { Grommet, Box } from 'grommet'
-import { PoseGroup } from 'react-pose'
 
 // Styles
 import './styles/colors.css'
@@ -37,7 +36,7 @@ const App: FC = () => {
   const [intro, setIntro] = useState<string>('exit')
 
   useEffect(() => {
-    if (intro === 'exit') setTimeout(() => setIntro('enter'), 500)
+    if (intro === 'exit') setTimeout(() => setIntro('enter'), 250)
   })
 
   return (
@@ -71,8 +70,8 @@ const App: FC = () => {
         <Navigation expanded={!scroll} pose={intro} />
         <Intro top={INTRO_TEXT_TOP} />
         <About />
-        <HireMe />
         <CV />
+        <HireMe />
         <Projects />
       </Box>
 

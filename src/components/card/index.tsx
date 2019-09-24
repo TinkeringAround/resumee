@@ -87,7 +87,7 @@ const Card: FC<Props> = ({ title, activities, duration, location, url }) => {
 
         return (
           <Accordion
-            className="animated accordionElement"
+            className="animated shadow"
             height={height}
             expandedHeight={expandedHeight}
             width="90%"

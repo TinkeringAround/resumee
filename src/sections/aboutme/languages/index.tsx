@@ -25,8 +25,8 @@ const Languages: FC = () => (
         >
           <Heading
             level="3"
-            color="dark"
-            margin={isMobile ? '0 0 0.5em' : isMedium ? '0 0 0 1em' : '0 0 0 2em'}
+            color="black"
+            margin={isMobile ? '0 0 0.5em' : '0'}
             size={isMedium ? '1.25em' : isMiddle ? '1.35em' : '1.45em'}
             style={{ fontWeight: 900 }}
           >
@@ -50,7 +50,7 @@ const Languages: FC = () => (
                     <Box
                       className="animated darkBackground"
                       width={lang.percentage + '%'}
-                      background="gold"
+                      background="blue"
                       pad={isMobile ? '0 0.5em' : '0 1.5em'}
                       style={{ borderRadius: borderRadius }}
                     >
@@ -67,7 +67,7 @@ const Languages: FC = () => (
                     </Box>
                   </Box>
                   <Text
-                    color="gold"
+                    color="blue"
                     size={isMobile ? '0.8em' : '0.9em'}
                     style={{ fontWeight: 600, marginLeft: '1em' }}
                   >
