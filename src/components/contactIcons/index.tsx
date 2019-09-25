@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { ResponsiveContext, Box } from 'grommet'
+import { Box } from 'grommet'
 
 // Types
 import { TIcon } from '../../types'
@@ -18,57 +18,51 @@ const labels = ['Write an Email to me', 'Check me out on Facebook', 'Check me ou
 
 //=========================================================
 interface Props {
-  color?: 'white' | 'dark' | 'gold'
-  hover?: 'darkHover' | 'goldHover'
   iconSize?: number
 }
 
 //=========================================================
-const ContactIcons: FC<Props> = ({ color = 'gold', hover = 'darkHover', iconSize = 30 }) => (
-  <ResponsiveContext.Consumer>
-    {size =>
-      icons.map((i: TIcon, index: number) => {
-        const iSize = size.includes('small') ? iconSize + 'px' : iconSize + 5 + 'px'
+const ContactIcons: FC<Props> = ({ iconSize = 30 }) => (
+  <>
+    {icons.map((i: TIcon, index: number) => {
+      const iSize = iconSize + 'px'
 
-        return (
-          <Box
-            key={'Contact-Icon-' + index}
-            width={iSize}
-            height={iSize}
-            margin={index === icons.length - 1 ? '0' : '0 0.75em 0 0'}
-            justify="center"
-            align="center"
+      return (
+        <Box
+          key={'Contact-Icon-' + index}
+          width={iSize}
+          height={iSize}
+          margin={index === icons.length - 1 ? '0' : '0 0.75em 0 0'}
+        >
+          <a
+            className="center"
+            aria-label={labels[index]}
+            href={contacts[index]}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              textDecoration: 'none',
+              width: '100%',
+              height: '100%',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center'
+            }}
           >
-            <a
-              className="center"
-              aria-label={labels[index]}
-              href={contacts[index]}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                textDecoration: 'none',
-                width: '100%',
-                height: '100%',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center'
-              }}
+            <svg
+              className={'animated white'}
+              xmlns="http://www.w3.org/2000/svg"
+              width={iSize}
+              height={iSize}
+              viewBox={i.viewport}
             >
-              <svg
-                className={'animated ' + color + ' ' + hover}
-                xmlns="http://www.w3.org/2000/svg"
-                width={iSize}
-                height={iSize}
-                viewBox={i.viewport}
-              >
-                {i.path}
-              </svg>
-            </a>
-          </Box>
-        )
-      })
-    }
-  </ResponsiveContext.Consumer>
+              {i.path}
+            </svg>
+          </a>
+        </Box>
+      )
+    })}
+  </>
 )
 
 export default ContactIcons

@@ -1,17 +1,17 @@
 import React, { FC } from 'react'
-import { Box, Text, Heading, ResponsiveContext, Image } from 'grommet'
+import { Box, Text, Heading, ResponsiveContext } from 'grommet'
 
 // Types
 import { TCard } from '../../types/'
+
+// Atoms
+import { Curlicue } from '../../atoms/icons'
 
 // Components
 import Card from '../../components/card'
 
 // Assets
 import steps from '../../assets/cv.json'
-import left from './left.png'
-import right from './right.png'
-import mobile from './mobile.png'
 
 //=========================================================
 const CV: FC = () => (
@@ -74,15 +74,14 @@ const CV: FC = () => (
               <svg
                 width="100%"
                 height="100%"
-                viewBox="0 0 2500 2500"
+                viewBox={Curlicue.viewport}
                 style={{
                   fill: 'transparent',
                   strokeWidth: 5,
                   stroke: 'var(--red)'
                 }}
               >
-                <path d="M2726.34,2619.96c-159.944,-476.218 -707.154,-1565.98 -1637.21,-785.699c-262.11,219.901 -530.02,457.839 -772.486,403.132c-498.452,-112.465 370.386,-2792.22 -706.592,-1881.3" />
-                <path d="M3331.28,392.615c133.805,126.911 -593.175,435.083 -1321.84,455.62c-705.459,19.884 -1307.88,-472.059 -1529.52,-276.521c-503.73,444.416 182.348,2211.87 -537.064,2248.8" />
+                {Curlicue.path}
               </svg>
             )}
           </Box>

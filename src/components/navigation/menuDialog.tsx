@@ -5,6 +5,7 @@ import { Box, Text, Heading } from 'grommet'
 
 // Atoms
 import { AMenu, AMenuItem, ASimple } from '../../atoms/animations'
+import ContactIcons from '../contactIcons'
 
 // Consts
 const links = ['About Me', 'Curriculum Vitae', 'Projects']
@@ -46,7 +47,7 @@ const MenuDialog: FC<Props> = ({ expanded, open, close, isMobile }) => {
         <PoseGroup preEnterPose="exit">
           {open && (
             <AMenu key="Overlay" className="fixed noScrolling" style={overlay}>
-              <Box width={`calc(100% - ${borderWidth}px)`}>
+              <Box className="relative" width={`calc(100% - ${borderWidth}px)`}>
                 <Box
                   className="cursor"
                   height={expanded ? '100px' : '75px'}
@@ -54,8 +55,16 @@ const MenuDialog: FC<Props> = ({ expanded, open, close, isMobile }) => {
                   align="end"
                   justify="center"
                 >
-                  <ASimple key="Close">
-                    <Heading level="4" color="white" margin="0 2em 0 0">
+                  <ASimple
+                    key="Header"
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'row',
+                      alignItems: 'center'
+                    }}
+                  >
+                    <ContactIcons iconSize={isMobile ? 20 : 35} />
+                    <Heading level="4" color="white" margin="0 2em">
                       Close
                     </Heading>
                   </ASimple>
@@ -74,7 +83,7 @@ const MenuDialog: FC<Props> = ({ expanded, open, close, isMobile }) => {
                       }}
                     >
                       <Text
-                        className="mont"
+                        className={'mont ' + !isMobile ? 'strikethrough' : ''}
                         size={isMobile ? '2em' : '3em'}
                         weight="bold"
                         color="white"

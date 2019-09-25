@@ -23,32 +23,56 @@
   transform: scale(1.05);
 }
 
-.scaleWeak:hover {
-  transform: scale(1.02);
-}
-
-.scaleWeakest:hover {
-  transform: scale(1.015);
-}
-
-.darkHover:hover {
-  color: var(--dark);
-  fill: var(--dark);
-  border-color: var(--dark);
-}
-
-.goldHover:hover {
-  color: var(--gold);
-  fill: var(--gold);
-  border-color: var(--gold);
-}
-
 .gradientHover:hover {
   color: var(--red);
   color: linear-gradient(180deg, rgba(240, 35, 45, 1) 30%, rgba(230, 0, 100, 1) 100%);
 }
 
+/* Strikethrough */
+.strikethrough {
+  display: inline-block;
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.strikethrough:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 12px;
+  box-shadow: 0 10px rgba(240, 35, 45, 0);
+  margin-top: -1em;
+  background: transparent;
+  transform-origin: center left;
+  animation: strikethrough 1s 1s cubic-bezier(0.55, 0, 0.1, 1) 1;
+  transition: transform 1s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.strikethrough:hover:after {
+  transform: scaleX(0);
+  transform-origin: center right;
+  box-shadow: 0 10px var(--pink);
+}
+
 /* Animations */
+@keyframes strikethrough {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@-webkit-keyframes strikethrough {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
 @-webkit-keyframes scrolling {
   0% {
     -webkit-transform: translateY(-200%);

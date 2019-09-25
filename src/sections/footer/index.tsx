@@ -39,7 +39,7 @@ const Footer: FC<Props> = ({ height }) => (
             </Text>
           </Box>
           <Box width="60%" margin="0 auto" direction="row" justify="center">
-            <ContactIcons color="white" hover="darkHover" iconSize={50} />
+            <ContactIcons iconSize={50} />
           </Box>
           <Box width="60%" margin="4em auto 1em" justify="center">
             <Text size="0.75em" color="white" textAlign="center">

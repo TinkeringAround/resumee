@@ -1,9 +1,9 @@
 import React, { FC, useState } from 'react'
-import { Box, ResponsiveContext, Text, Heading } from 'grommet'
+import { Box, ResponsiveContext, Heading } from 'grommet'
 
 // Atoms
-import Button from '../../atoms/button'
 import { ANavigation } from '../../atoms/animations'
+import Button from '../../atoms/button'
 
 // Partials
 import MenuDialog from './menuDialog'
