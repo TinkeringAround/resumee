@@ -9,8 +9,9 @@ import '../../../node_modules/react-lazy-load-image-component/src/effects/opacit
 // Components
 import Scroller from '../../components/scroller'
 
-// Config
+// Configs
 import params from './params'
+
 // Assets
 // import intro from '../../assets/intro.json'
 
@@ -68,9 +69,11 @@ const Intro: FC<Props> = ({ top }) => (
     <Particles
       width="100%"
       height={window.innerHeight + 'px'}
+      //@ts-ignore
       params={params}
       style={{ zIndex: 20, top: 0, left: 0 }}
     />
+
     {/* <Box
       className="absolute"
       width={window.innerWidth / 2 + 'px'}

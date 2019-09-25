@@ -18,6 +18,8 @@ const DURATION_MULTIPLICATOR = 50
 const StyledAccordion = styled.div`
   display: flex;
   width: ${(props: any) => props.width};
+  background: white;
+
   flex-direction: column;
   padding: ${(props: any) => props.pad};
   margin: ${(props: any) => props.margin};

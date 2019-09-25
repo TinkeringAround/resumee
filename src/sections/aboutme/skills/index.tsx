@@ -19,20 +19,20 @@ const Skills: FC = () => (
       return (
         <Box
           width={isMobile ? '95%' : '100%'}
-          direction={isMobile ? 'column' : 'row'}
+          direction="column"
           margin="0 0 1em 0"
           justify="between"
         >
           <Heading
             level="3"
             color="black"
-            margin={isMobile ? '0 0 0.5em' : '0'}
+            margin="0 0 0.5em"
             size={isMedium ? '1.25em' : isMiddle ? '1.35em' : '1.45em'}
             style={{ fontWeight: 900 }}
           >
             Skills
           </Heading>
-          <Box height="100%" width={isMobile ? '100%' : '75%'} direction="column" align="end">
+          <Box height="100%" width="100%" direction="column" align="end">
             {skills.map((skill: TSkill, index: number) => {
               return (
                 <Box
@@ -40,7 +40,7 @@ const Skills: FC = () => (
                   width="100%"
                   direction="row"
                   align="center"
-                  margin={isMobile ? '0 0 0.75em 0' : '0 0 1.25em 0'}
+                  margin={isMobile ? '0 0 0.75em' : '0 0 1.25em'}
                 >
                   <Box
                     width={isMobile ? '85%' : '80%'}
@@ -67,7 +67,7 @@ const Skills: FC = () => (
                     </Box>
                   </Box>
                   <Text
-                    color="blue"
+                    color="black"
                     size={isMobile ? '0.8em' : '0.9em'}
                     style={{ fontWeight: 600, marginLeft: '1em' }}
                   >

@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Box, Text, Heading, ResponsiveContext } from 'grommet'
+import { Box, Text, Heading, ResponsiveContext, Image } from 'grommet'
 
 // Types
 import { TCard } from '../../types/'
@@ -9,6 +9,9 @@ import Card from '../../components/card'
 
 // Assets
 import steps from '../../assets/cv.json'
+import left from './left.png'
+import right from './right.png'
+import mobile from './mobile.png'
 
 //=========================================================
 const CV: FC = () => (
@@ -21,7 +24,8 @@ const CV: FC = () => (
       return (
         <Box
           id="cv"
-          background="white"
+          className="relative"
+          background="transparent"
           justify="center"
           align="center"
           pad={isMobile ? '5em 0' : '8em 0'}
@@ -38,10 +42,14 @@ const CV: FC = () => (
           <Text color="dark" size="1em" style={{ padding: isMobile ? '0 .5em' : '0' }}>
             Where I aquired my <strong>developer skills.</strong>
           </Text>
+          {isMobile && (
+            <Box className="gradientBackground" width="60%" height="2px" margin="1em 0 2em" />
+          )}
           <Box
+            className="gradient"
             width={isMobile ? '90%' : isMedium ? '80%' : isMiddle ? '60%' : '50%'}
             direction="column"
-            margin="4em auto 4em auto"
+            margin={isMobile ? '0 auto 4em' : '4em auto'}
             wrap
           >
             {steps.map((step: TCard, index: number) => (
@@ -54,6 +62,29 @@ const CV: FC = () => (
                 duration={step.duration}
               />
             ))}
+          </Box>
+          <Box
+            className="absolute"
+            background="white"
+            height="100%"
+            width="100%"
+            style={{ top: 0, left: 0, zIndex: -1 }}
+          >
+            {!isMobile && (
+              <svg
+                width="100%"
+                height="100%"
+                viewBox="0 0 2500 2500"
+                style={{
+                  fill: 'transparent',
+                  strokeWidth: 5,
+                  stroke: 'var(--red)'
+                }}
+              >
+                <path d="M2726.34,2619.96c-159.944,-476.218 -707.154,-1565.98 -1637.21,-785.699c-262.11,219.901 -530.02,457.839 -772.486,403.132c-498.452,-112.465 370.386,-2792.22 -706.592,-1881.3" />
+                <path d="M3331.28,392.615c133.805,126.911 -593.175,435.083 -1321.84,455.62c-705.459,19.884 -1307.88,-472.059 -1529.52,-276.521c-503.73,444.416 182.348,2211.87 -537.064,2248.8" />
+              </svg>
+            )}
           </Box>
         </Box>
       )

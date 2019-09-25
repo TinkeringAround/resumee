@@ -7,12 +7,12 @@ export const AIntro = posed(styled.div`
   width: 100%;
 `)({
   exit: {
-    height: '100vh',
-    transition: { duration: 1000 }
+    height: '200px',
+    transition: (props: any) => ({ duration: props.duration })
   },
   enter: {
     height: 0,
-    transition: { duration: 1500 },
+    transition: (props: any) => ({ duration: props.duration }),
     beforeChildren: true,
     staggerChildren: 100
   }

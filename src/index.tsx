@@ -25,10 +25,12 @@ import { AIntro } from './atoms/animations'
 import Navigation from './components/navigation'
 
 // Consts
-const NAVIGATION = 75
+const NAVIGATION = 50
 const TOLERANCE = 10
 const FOOTER_HEIGHT = 400
 const INTRO_TEXT_TOP = 200
+
+const INTRO_DURATION = 750
 
 //=========================================================
 const App: FC = () => {
@@ -64,10 +66,10 @@ const App: FC = () => {
         style={{ zIndex: 20 }}
       >
         {/* Intro Animation */}
-        <AIntro className="gradientBackground" pose={intro} />
+        <AIntro className="gradientBackground" pose={intro} duration={INTRO_DURATION} />
 
         {/* Sections */}
-        <Navigation expanded={!scroll} pose={intro} />
+        <Navigation expanded={!scroll} pose={intro} delay={INTRO_DURATION} />
         <Intro top={INTRO_TEXT_TOP} />
         <About />
         <CV />
@@ -76,6 +78,7 @@ const App: FC = () => {
       </Box>
 
       {/* Footer */}
+
       <Footer key="Footer" height={FOOTER_HEIGHT} />
     </Grommet>
   )

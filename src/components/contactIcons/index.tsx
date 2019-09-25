@@ -56,6 +56,7 @@ const ContactIcons: FC<Props> = ({ color = 'gold', hover = 'darkHover', iconSize
             >
               <svg
                 className={'animated ' + color + ' ' + hover}
+                xmlns="http://www.w3.org/2000/svg"
                 width={iSize}
                 height={iSize}
                 viewBox={i.viewport}

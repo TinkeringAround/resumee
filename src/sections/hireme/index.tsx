@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Box, Heading, Text, ResponsiveContext } from 'grommet'
+import { Box, Heading, ResponsiveContext } from 'grommet'
 
 // Atoms
 import Button from '../../atoms/button'
@@ -26,7 +26,7 @@ const HireMe: FC = () => (
               rel="noopener noreferrer"
               style={{ textDecoration: 'none' }}
             >
-              <Button text="Hire Me" fontSize="1em" color="white" arrow></Button>
+              <Button text="Hire Me" fontSize="1em" arrow></Button>
             </a>
           </Box>
         </Box>

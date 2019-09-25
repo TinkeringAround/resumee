@@ -12,10 +12,11 @@ import MenuDialog from './menuDialog'
 interface Props {
   expanded: boolean
   pose: string
+  delay: number
 }
 
 //=========================================================
-const Navigation: FC<Props> = ({ expanded, pose }) => {
+const Navigation: FC<Props> = ({ expanded, pose, delay }) => {
   const [open, setOpen] = useState<boolean>(false)
 
   return (
@@ -31,12 +32,11 @@ const Navigation: FC<Props> = ({ expanded, pose }) => {
               height={expanded ? '100px' : '75px'}
               width={isMobile ? '100%' : 'calc(100% - 10px)'}
               background={expanded ? 'transparent' : 'white'}
-              delay={1000}
+              delay={delay}
             >
               <Box margin={isMobile ? '0 0 0 2em' : '0 0 0 4em'}>
                 <Button
                   text="TM"
-                  color="blue"
                   uppercase
                   fontSize={isMobile ? (expanded ? '0.9em' : '0.8em') : expanded ? '1em' : '0.8em'}
                   onClick={() => {

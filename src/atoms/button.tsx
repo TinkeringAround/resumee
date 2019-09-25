@@ -11,7 +11,6 @@ interface Props {
   fontSize?: string
   uppercase?: boolean
   arrow?: boolean
-  color?: 'white' | 'blue' | 'gradient'
 }
 
 //=========================================================
@@ -20,8 +19,7 @@ const Button: FC<Props> = ({
   onClick = null,
   uppercase = false,
   arrow = false,
-  fontSize = '1.25em',
-  color = 'blue'
+  fontSize = '1.25em'
 }) => (
   <ResponsiveContext.Consumer>
     {size => {
@@ -33,7 +31,7 @@ const Button: FC<Props> = ({
         alignItems: 'center',
 
         width: '100%',
-        background: 'transparent',
+        background: 'white',
         padding: '0.75em',
 
         borderStyle: 'solid',
@@ -47,11 +45,12 @@ const Button: FC<Props> = ({
       }
 
       return (
-        <button className={'mont animated ' + color} style={style} onClick={onClick}>
+        <button className="mont animated blue" style={style} onClick={onClick}>
           {uppercase ? text.toUpperCase() : text}
           {arrow && (
             <svg
-              className={'icon ' + color}
+              className="icon blue"
+              xmlns="http://www.w3.org/2000/svg"
               width="1em"
               height="1em"
               viewBox={ArrowRight.viewport}

@@ -15,14 +15,14 @@ const Hobbies: FC = () => (
       return (
         <Box
           width={isMobile ? '95%' : '100%'}
-          direction={isMobile ? 'column' : 'row'}
+          direction="column"
           margin="0 0 2em 0"
           justify="between"
         >
           <Heading
             level="3"
             color="black"
-            margin={isMobile ? '0 0 0.5em' : '0'}
+            margin="0 0 0.5em"
             size={isMedium ? '1.25em' : isMiddle ? '1.35em' : '1.45em'}
             style={{ fontWeight: 900 }}
           >
@@ -30,10 +30,9 @@ const Hobbies: FC = () => (
           </Heading>
           <Box
             height="100%"
-            width={isMobile ? '100%' : '75%'}
+            width={isMobile ? '100%' : '85%'}
             direction="row"
             align="center"
-            justify={isMobile ? 'start' : 'start'}
             pad={isMobile ? '0' : '0 3em 0 0'}
             wrap
           >
