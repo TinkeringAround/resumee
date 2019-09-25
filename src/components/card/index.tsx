@@ -55,7 +55,7 @@ const Card: FC<Props> = ({ title, activities, duration, location, url }) => {
             margin="0 auto 1em"
             pose={expanded ? 'expanded' : 'normal'}
             onClick={() => setExpanded(!expanded)}
-            style={{ border: expanded ? '2px solid var(--red)' : '2px solid transparent' }}
+            style={{ border: expanded ? '2px solid var(--pink)' : '2px solid transparent' }}
           >
             <Box height="100%" width="100%" justify="between" align="end" direction="column">
               <Box className="relative" width="100%" pad={isMobile ? '0' : '0 2em 0 0'}>

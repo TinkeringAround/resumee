@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { Box, Heading, Text } from 'grommet'
 import Particles from 'react-particles-js'
-// import { LazyLoadImage } from 'react-lazy-load-image-component'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 // Styles
 import '../../../node_modules/react-lazy-load-image-component/src/effects/opacity.css'
@@ -14,6 +14,7 @@ import params from './params'
 
 // Assets
 // import intro from '../../assets/intro.json'
+import me from './Me.png'
 
 //=========================================================
 interface Props {
@@ -35,9 +36,6 @@ const Intro: FC<Props> = ({ top }) => (
       justify="center"
       style={{ top: top, left: '10%', zIndex: 5 }}
     >
-      <Heading className="gradient" level="1" margin="0" style={{ fontWeight: 900 }}>
-        {"I'm Thomas Maier".toUpperCase()}
-      </Heading>
       <Text
         color="dark"
         size="1.25em"
@@ -74,23 +72,18 @@ const Intro: FC<Props> = ({ top }) => (
       style={{ zIndex: 20, top: 0, left: 0 }}
     />
 
-    {/* <Box
-      className="absolute"
-      width={window.innerWidth / 2 + 'px'}
-      height="500px"
-      style={{ right: window.innerWidth / 4, bottom: 100 }}
-    >
+    <Box className="absolute" width="80%" height="90%" style={{ right: '5%', bottom: '5%' }}>
       <LazyLoadImage
-        alt={intro.title}
+        alt="Thomas Maier"
         effect="opacity"
         src={me}
         scrollPosition={false}
-        visibleByDefault={false}
+        visibleByDefault
         width="100%"
         height="100%"
         style={{ objectFit: 'contain' }}
       />
-    </Box> */}
+    </Box>
   </Box>
 )
 export default Intro

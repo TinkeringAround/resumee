@@ -30,7 +30,7 @@ const TOLERANCE = 10
 const FOOTER_HEIGHT = 400
 const INTRO_TEXT_TOP = 200
 
-const INTRO_DURATION = 750
+const INTRO_DURATION = 150
 
 //=========================================================
 const App: FC = () => {
@@ -69,7 +69,7 @@ const App: FC = () => {
         <AIntro className="gradientBackground" pose={intro} duration={INTRO_DURATION} />
 
         {/* Sections */}
-        <Navigation expanded={!scroll} pose={intro} delay={INTRO_DURATION - 250} />
+        <Navigation expanded={!scroll} pose={intro} delay={INTRO_DURATION} />
         <Intro top={INTRO_TEXT_TOP} />
         <About />
         <CV />

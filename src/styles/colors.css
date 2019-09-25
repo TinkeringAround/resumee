@@ -7,7 +7,7 @@
   /* New Colors */
   --grey: rgb(95, 95, 95);
   --blue: rgb(36, 32, 135);
-  --red: #f0232d;
+  --red: rgb(240, 80, 15);
   --pink: #e60064;
   --green: #3ce197;
 }
@@ -40,17 +40,17 @@
 
 .gradient {
   color: var(--red);
-  color: linear-gradient(180deg, rgba(240, 35, 45, 1) 30%, rgba(230, 0, 100, 1) 100%);
+  color: linear-gradient(180deg, rgba(240, 80, 15, 1) 30%, rgba(230, 0, 100, 1) 100%);
 
   border-color: var(--red);
-  border-color: linear-gradient(180deg, rgba(240, 35, 45, 1) 30%, rgba(230, 0, 100, 1) 100%);
+  border-color: linear-gradient(180deg, rgba(240, 80, 15, 1) 30%, rgba(230, 0, 100, 1) 100%);
 
   fill: var(--red);
-  fill: linear-gradient(180deg, rgba(240, 35, 45, 1) 30%, rgba(230, 0, 100, 1) 100%);
+  fill: linear-gradient(180deg, rgba(240, 80, 15, 1) 30%, rgba(230, 0, 100, 1) 100%);
 }
 
 /* Backgrounds */
 .gradientBackground {
   background: var(--red);
-  background: linear-gradient(180deg, rgba(240, 35, 45, 1) 30%, rgba(230, 0, 100, 1) 100%);
+  background: linear-gradient(180deg, rgba(240, 80, 15, 1) 30%, rgba(230, 0, 100, 1) 100%);
 }
