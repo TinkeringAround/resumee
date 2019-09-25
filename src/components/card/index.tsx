@@ -1,57 +1,17 @@
 import React, { FC, useState } from 'react'
 import { Box, Heading, Text, ResponsiveContext } from 'grommet'
-import posed, { PoseGroup } from 'react-pose'
-import styled from 'styled-components'
+import { PoseGroup } from 'react-pose'
 
 // Theme
 import theme from '../../styles/theme'
 
+// Animations
+import { Accordion, ListItem } from './animations'
+
 // Consts
 const MIN_HEIGHT = 125
-const MIN_HEIGHT_MOBILE = 125
 const HEIGHT_MULTIPLICATOR = 25
-const HEIGHT_MULTIPLICATOR_MOBILE = 35
-const DURATION = 250
-const DURATION_MULTIPLICATOR = 50
-
-// Components
-const StyledAccordion = styled.div`
-  display: flex;
-  width: ${(props: any) => props.width};
-  background: white;
-
-  flex-direction: column;
-  padding: ${(props: any) => props.pad};
-  margin: ${(props: any) => props.margin};
-  cursor: pointer;
-`
-
-const Accordion = posed(StyledAccordion)({
-  normal: {
-    height: (props: any) => props.height,
-    scale: 1,
-    transition: {
-      duration: 2 * DURATION
-    }
-  },
-  expanded: {
-    height: (props: any) => props.expandedHeight,
-    scale: 1.025,
-    transition: { duration: DURATION }
-  }
-})
-
-const ListItem = posed.li({
-  exit: {
-    opacity: 0,
-    delay: (props: any) => props.exitMultiplicator * DURATION_MULTIPLICATOR,
-    transition: { duration: DURATION }
-  },
-  enter: {
-    opacity: 1,
-    delay: (props: any) => props.enterMultiplicator * DURATION_MULTIPLICATOR + DURATION
-  }
-})
+const HEIGHT_MULTIPLICATOR_MOBILE = 30
 
 //=========================================================
 interface Props {
@@ -81,27 +41,26 @@ const Card: FC<Props> = ({ title, activities, duration, location, url }) => {
           lineHeight: '1.2em'
         }
 
-        // Calculations
-        const height = isMobile ? MIN_HEIGHT_MOBILE : MIN_HEIGHT
-        const expandedHeight =
-          (isMobile ? MIN_HEIGHT_MOBILE : MIN_HEIGHT) +
-          activities.length * (isMobile ? HEIGHT_MULTIPLICATOR_MOBILE : HEIGHT_MULTIPLICATOR)
-
         return (
           <Accordion
+            key="Accordion"
             className="animated shadow"
-            height={height}
-            expandedHeight={expandedHeight}
+            height={MIN_HEIGHT}
+            expandedHeight={
+              MIN_HEIGHT +
+              activities.length * (isMobile ? HEIGHT_MULTIPLICATOR_MOBILE : HEIGHT_MULTIPLICATOR)
+            }
             width="90%"
             pad={isMobile ? '1em' : '2em'}
             margin="0 auto 1em"
             pose={expanded ? 'expanded' : 'normal'}
             onClick={() => setExpanded(!expanded)}
+            style={{ border: expanded ? '2px solid var(--red)' : '2px solid transparent' }}
           >
             <Box height="100%" width="100%" justify="between" align="end" direction="column">
-              <Box width="100%" pad={isMobile ? '0' : '0 2em 0 0'}>
+              <Box className="relative" width="100%" pad={isMobile ? '0' : '0 2em 0 0'}>
                 <Heading
-                  className="animated gradientHover"
+                  className="animated"
                   level="3"
                   size={isMobile ? '1em' : '1.25em'}
                   color={expanded ? 'blue' : 'black'}

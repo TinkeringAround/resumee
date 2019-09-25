@@ -69,7 +69,7 @@ const App: FC = () => {
         <AIntro className="gradientBackground" pose={intro} duration={INTRO_DURATION} />
 
         {/* Sections */}
-        <Navigation expanded={!scroll} pose={intro} delay={INTRO_DURATION} />
+        <Navigation expanded={!scroll} pose={intro} delay={INTRO_DURATION - 250} />
         <Intro top={INTRO_TEXT_TOP} />
         <About />
         <CV />
