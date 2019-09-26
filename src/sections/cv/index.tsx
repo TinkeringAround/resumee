@@ -27,19 +27,20 @@ const CV: FC = () => (
           className="relative"
           background="transparent"
           justify="center"
-          align="center"
-          pad={isMobile ? '5em 0' : '8em 0'}
+          align={isMobile ? 'start' : 'center'}
+          pad={isMobile ? '3em 1.5em 0' : '8em 0'}
         >
           <Heading
             level="1"
             margin="0"
-            size={isMobile ? '2em' : '3em'}
-            color="blue"
+            size={isMobile ? '1.6em' : '3em'}
+            color="black"
             style={{ fontWeight: 900 }}
           >
             Curriculum Vitae.
           </Heading>
-          <Text color="dark" size="1em" style={{ padding: isMobile ? '0 .5em' : '0' }}>
+
+          <Text color="dark" size={isMobile ? '0.8em' : '1em'}>
             Where I aquired my <strong>developer skills.</strong>
           </Text>
           {isMobile && (
@@ -47,7 +48,7 @@ const CV: FC = () => (
           )}
           <Box
             className="gradient"
-            width={isMobile ? '90%' : isMedium ? '80%' : isMiddle ? '60%' : '50%'}
+            width={isMobile ? '100%' : isMedium ? '80%' : isMiddle ? '60%' : '50%'}
             direction="column"
             margin={isMobile ? '0 auto 4em' : '4em auto'}
             wrap

@@ -18,69 +18,75 @@ import CV from './sections/cv'
 import Projects from './sections/projects'
 import Footer from './sections/footer'
 
-// Atoms
-import { AIntro } from './atoms/animations'
-
 // Components
 import Navigation from './components/navigation'
+import { PoseGroup } from 'react-pose'
+import { ASimple } from './atoms/animations'
 
 // Consts
 const NAVIGATION = 50
-const TOLERANCE = 10
+const ABOUT_ME = window.innerHeight / 2
 const FOOTER_HEIGHT = 400
-const INTRO_TEXT_TOP = 200
-
-const INTRO_DURATION = 150
 
 //=========================================================
 const App: FC = () => {
   const [scroll, setScroll] = useState<boolean>(false)
   const [intro, setIntro] = useState<string>('exit')
+  const [scrollAtAboutMe, setScrollAtAboutMe] = useState<boolean>(false)
 
   useEffect(() => {
     if (intro === 'exit') setTimeout(() => setIntro('enter'), 250)
   })
 
+  const onScroll = (event: any) => {
+    //@ts-ignore
+    if (event.target.id === 'grommet') {
+      //@ts-ignore
+      if (!scroll && event.target.scrollTop > NAVIGATION) setScroll(true)
+      //@ts-ignore
+      else if (scroll && event.target.scrollTop < NAVIGATION) setScroll(false)
+      //@ts-ignore
+      else if (!scrollAtAboutMe && event.target.scrollTop >= ABOUT_ME) setScrollAtAboutMe(true)
+    }
+  }
+
   return (
-    <Grommet
-      id="grommet"
-      className="relative"
-      theme={theme}
-      full
-      style={{ background: 'transparent' }}
-      onScroll={event => {
-        //@ts-ignore
-        if (event.target.id === 'grommet') {
-          //@ts-ignore
-          if (event.target.scrollTop > NAVIGATION + TOLERANCE) setScroll(true)
-          //@ts-ignore
-          else if (event.target.scrollTop < NAVIGATION - TOLERANCE) setScroll(false)
-        }
-      }}
-    >
-      {/* Main */}
-      <Box
-        className="relative shadow"
-        width="100%"
-        margin={`0 0 ${FOOTER_HEIGHT}px`}
-        style={{ zIndex: 20 }}
-      >
-        {/* Intro Animation */}
-        <AIntro className="gradientBackground" pose={intro} duration={INTRO_DURATION} />
+    <PoseGroup flipMove={false}>
+      {/* Intro Animation */}
 
-        {/* Sections */}
-        <Navigation expanded={!scroll} pose={intro} delay={INTRO_DURATION} />
-        <Intro top={INTRO_TEXT_TOP} />
-        <About />
-        <CV />
-        <HireMe />
-        <Projects />
-      </Box>
+      {/* Webseite */}
+      {intro === 'enter' && (
+        <ASimple key="grommet">
+          <Grommet
+            id="grommet"
+            className="relative"
+            theme={theme}
+            full
+            style={{ background: 'transparent' }}
+            onScroll={onScroll}
+          >
+            {/* Main */}
+            <Box
+              className="relative shadow"
+              width="100%"
+              margin={`0 0 ${FOOTER_HEIGHT}px`}
+              style={{ zIndex: 20 }}
+            >
+              {/* Sections */}
+              <Navigation expanded={!scroll} />
+              <Intro />
+              <About inView={scrollAtAboutMe} />
+              <CV />
+              <HireMe />
+              <Projects />
+            </Box>
 
-      {/* Footer */}
-
-      <Footer key="Footer" height={FOOTER_HEIGHT} />
-    </Grommet>
+            {/* Footer */}
+            <Footer key="Footer" height={FOOTER_HEIGHT} />
+          </Grommet>
+        </ASimple>
+      )}
+    </PoseGroup>
   )
 }
 

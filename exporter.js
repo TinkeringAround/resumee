@@ -29,7 +29,9 @@ contentful
   .then(results => {
     if (results.hasOwnProperty('items')) {
       const intro = {
-        title: results.items[0].fields['title']
+        title: results.items[0].fields['title'],
+        desktop: 'https:' + results.items[0].fields['desktop'].fields['file'].url,
+        mobile: 'https:' + results.items[0].fields['mobile'].fields['file'].url
       }
       fs.writeFileSync(pathPrefix + 'intro.json', JSON.stringify(intro, null, 2), 'utf-8')
     }
@@ -38,7 +40,7 @@ contentful
 
 // ===============================================
 
-// Skills
+// About Me
 contentful
   .getEntries({
     content_type: 'aboutMe',
@@ -62,6 +64,11 @@ contentful
         }
       })
 
+      const aboutMeImage = {
+        title: results.items[0].fields['image'].fields['title'],
+        url: 'https:' + results.items[0].fields['image'].fields['file'].url
+      }
+
       fs.writeFileSync(
         pathPrefix + 'skills.json',
         JSON.stringify(shuffle(skills), null, 2),
@@ -77,6 +84,12 @@ contentful
       fs.writeFileSync(
         pathPrefix + 'languages.json',
         JSON.stringify(shuffle(languages), null, 2),
+        'utf-8'
+      )
+
+      fs.writeFileSync(
+        pathPrefix + 'aboutMeImage.json',
+        JSON.stringify(aboutMeImage, null, 2),
         'utf-8'
       )
     }

@@ -23,8 +23,8 @@ const Hobbies: FC = () => (
             level="3"
             color="black"
             margin="0 0 0.5em"
-            size={isMedium ? '1.25em' : isMiddle ? '1.35em' : '1.45em'}
-            style={{ fontWeight: 900 }}
+            size={isMedium ? '1.15em' : isMiddle ? '1.25em' : '1.35em'}
+            style={{ fontWeight: 600 }}
           >
             Hobbies
           </Heading>
@@ -39,10 +39,9 @@ const Hobbies: FC = () => (
             {hobbies.map((hobby: string, index: number) => (
               <Text
                 key={'Hobby-' + index}
-                color="blue"
+                color="dark"
                 size={isMobile ? '0.85em' : '1em'}
                 style={{
-                  fontWeight: 600,
                   marginRight: index === hobbies.length - 1 ? 0 : '0.25em'
                 }}
               >

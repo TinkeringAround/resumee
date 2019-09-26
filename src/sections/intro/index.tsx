@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Box, Heading, Text } from 'grommet'
+import { Box, Text, Heading, ResponsiveContext } from 'grommet'
 import Particles from 'react-particles-js'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 
@@ -13,77 +13,101 @@ import Scroller from '../../components/scroller'
 import params from './params'
 
 // Assets
-// import intro from '../../assets/intro.json'
-import me from './Me.png'
+import intro from '../../assets/intro.json'
+
+// Consts
+const TOP_DESKTOP = 250
+const TOP_MEDIUM = 180
+const TOP_MOBILE = 150
 
 //=========================================================
-interface Props {
-  top: number
-}
+const Intro: FC = () => (
+  <ResponsiveContext.Consumer>
+    {size => {
+      const isMobile = size.includes('small')
+      const isMedium = size.includes('medium')
 
-//=========================================================
-const Intro: FC<Props> = ({ top }) => (
-  <Box
-    id="welcome"
-    className="relative"
-    width="100%"
-    height={window.innerHeight + 'px'}
-    background="white"
-  >
-    <Box
-      className="absolute"
-      width="40%"
-      justify="center"
-      style={{ top: top, left: '10%', zIndex: 5 }}
-    >
-      <Text
-        color="dark"
-        size="1.25em"
-        style={{
-          letterSpacing: '0.1em',
-          fontWeight: 600
-        }}
-      >
-        Fullstack Developer.
-      </Text>
-      <Box width="60%">
-        <Text
-          color="dark"
-          size=".8em"
-          margin="0.5em 0 0"
-          style={{
-            letterSpacing: '0.1em',
-            fontWeight: 600
-          }}
+      return (
+        <Box
+          id="welcome"
+          className="relative"
+          width="100%"
+          height={window.innerHeight + 'px'}
+          background="white"
         >
-          Still trying to find my place in the world, I'm constantly trying to improve my technical
-          and social skills to help building awesome software for people.
-        </Text>
-      </Box>
-    </Box>
-    <Scroller />
+          <Box
+            className="absolute"
+            width={isMobile ? '70%' : '40%'}
+            justify="center"
+            style={{
+              top: isMobile ? TOP_MOBILE : isMedium ? TOP_MEDIUM : TOP_DESKTOP,
+              left: isMobile ? '5%' : '15%',
+              zIndex: 5
+            }}
+          >
+            <Heading
+              level="1"
+              margin="0"
+              color="black"
+              size="1.25em"
+              style={{
+                letterSpacing: '0.1em',
+                fontWeight: 600
+              }}
+            >
+              Fullstack Developer.
+            </Heading>
+            <Box width={isMobile ? '70%' : '50%'}>
+              <Text
+                color="dark"
+                size={isMobile ? '.7em' : '.8em'}
+                margin="0.5em 0 0"
+                style={{
+                  fontWeight: 600
+                }}
+              >
+                I'm constantly trying to improve my technical and social skills to help building
+                awesome software for people.
+              </Text>
+            </Box>
+            <Box
+              width={isMobile ? '0%' : '30%'}
+              height="2px"
+              margin="1em 0 0"
+              background="pink"
+            ></Box>
+          </Box>
+          <Scroller style={{ bottom: isMobile ? 0 : '2em', zIndex: 5 }} />
 
-    {/* Background */}
-    <Particles
-      width="100%"
-      height={window.innerHeight + 'px'}
-      //@ts-ignore
-      params={params}
-      style={{ zIndex: 20, top: 0, left: 0 }}
-    />
+          {/* Background */}
+          <Particles
+            width="100%"
+            height={window.innerHeight + 'px'}
+            //@ts-ignore
+            params={params}
+            style={{ zIndex: 20, top: 0, left: 0 }}
+          />
 
-    <Box className="absolute" width="80%" height="90%" style={{ right: '5%', bottom: '5%' }}>
-      <LazyLoadImage
-        alt="Thomas Maier"
-        effect="opacity"
-        src={me}
-        scrollPosition={false}
-        visibleByDefault
-        width="100%"
-        height="100%"
-        style={{ objectFit: 'contain' }}
-      />
-    </Box>
-  </Box>
+          <Box
+            className="absolute"
+            width={isMobile ? '100%' : '80%'}
+            height="90%"
+            style={{ right: isMobile ? 0 : '5%', bottom: '5%' }}
+          >
+            <LazyLoadImage
+              alt={intro.title}
+              effect="opacity"
+              src={isMobile ? intro.mobile : intro.desktop}
+              scrollPosition={false}
+              visibleByDefault={false}
+              width="100%"
+              height="100%"
+              style={{ objectFit: 'contain' }}
+            />
+          </Box>
+        </Box>
+      )
+    }}
+  </ResponsiveContext.Consumer>
 )
 export default Intro

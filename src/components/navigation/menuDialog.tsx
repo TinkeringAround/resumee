@@ -1,10 +1,12 @@
-import React, { useEffect, FC } from 'react'
+import React, { FC } from 'react'
 import { Portal } from 'react-portal'
 import { PoseGroup } from 'react-pose'
 import { Box, Text, Heading } from 'grommet'
 
 // Atoms
 import { AMenu, AMenuItem, ASimple } from '../../atoms/animations'
+
+// Components
 import ContactIcons from '../contactIcons'
 
 // Consts
@@ -34,19 +36,19 @@ interface Props {
 
 //=========================================================
 const MenuDialog: FC<Props> = ({ expanded, open, close, isMobile }) => {
-  const borderWidth = isMobile ? 30 : 100
-
-  useEffect(() => {
-    const body = document.getElementsByTagName('body')
-    body[0].style.overflowY = open ? 'hidden' : 'visible'
-  }, [open])
+  const borderWidth = isMobile ? 40 : 100
 
   return (
     <Portal>
       <aside>
-        <PoseGroup preEnterPose="exit">
+        <PoseGroup preEnterPose="exit" flipMove={false}>
           {open && (
-            <AMenu key="Overlay" className="fixed noScrolling" style={overlay}>
+            <AMenu
+              key="Overlay"
+              className="fixed noScrolling"
+              duration={isMobile ? 1.25 * window.innerWidth : 1000}
+              style={overlay}
+            >
               <Box className="relative" width={`calc(100% - ${borderWidth}px)`}>
                 <Box
                   className="cursor"
@@ -58,13 +60,17 @@ const MenuDialog: FC<Props> = ({ expanded, open, close, isMobile }) => {
                   <ASimple
                     key="Header"
                     style={{
+                      width: '100%',
                       display: 'flex',
                       flexDirection: 'row',
-                      alignItems: 'center'
+                      alignItems: 'center',
+                      justifyContent: isMobile ? 'space-between' : 'flex-end'
                     }}
                   >
-                    <ContactIcons iconSize={isMobile ? 20 : 35} />
-                    <Heading level="4" color="white" margin="0 2em">
+                    <Box margin={isMobile ? '0 0 0 2em' : '0'} direction="row">
+                      <ContactIcons iconSize={isMobile ? 30 : 35} />
+                    </Box>
+                    <Heading level="4" color="white" margin="0 2em" style={{ fontWeight: 900 }}>
                       Close
                     </Heading>
                   </ASimple>
@@ -83,7 +89,7 @@ const MenuDialog: FC<Props> = ({ expanded, open, close, isMobile }) => {
                       }}
                     >
                       <Text
-                        className={'mont ' + !isMobile ? 'strikethrough' : ''}
+                        className="mont"
                         size={isMobile ? '2em' : '3em'}
                         weight="bold"
                         color="white"

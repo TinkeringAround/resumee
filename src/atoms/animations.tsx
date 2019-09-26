@@ -2,43 +2,32 @@ import posed from 'react-pose'
 import styled from 'styled-components'
 
 // ===============================================
-// Intro
-export const AIntro = posed(styled.div`
-  width: 100%;
-`)({
-  exit: {
-    height: '200px',
-    transition: (props: any) => ({ duration: props.duration })
-  },
-  enter: {
-    height: 0,
-    transition: (props: any) => ({ duration: props.duration }),
-    beforeChildren: true,
-    staggerChildren: 100
-  }
-})
-
-// ===============================================
-// Navigation
-export const ANavigation = posed(styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-
-  height: ${(props: any) => props.height};
-  width: ${(props: any) => props.width};
-
-  background: ${(props: any) => props.background};
-  z-index: 30;
-`)({
+// Simple
+export const ASimple = posed.div({
   exit: { opacity: 0 },
   enter: { opacity: 1, delay: (props: any) => (props.hasOwnProperty('delay') ? props.delay : 0) }
 })
+
 // ===============================================
-export const ASimple = posed.div({
-  exit: { opacity: 0 },
-  enter: { opacity: 1 }
+// Overlay
+export const AOverlay = posed(styled.div`
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: ${(props: any) => (props.hasOwnProperty('zIndex') ? props.zIndex : 21)};
+
+  height: 100%;
+
+  background: ${(props: any) =>
+    props.hasOwnProperty('background') ? props.background : 'var(--blue)'};
+`)({
+  exit: {
+    width: 0,
+    transition: (props: any) => {
+      return { duration: props.duration }
+    }
+  },
+  enter: { width: '100%', transition: { duration: 50 } }
 })
 
 // ===============================================
@@ -46,11 +35,19 @@ export const ASimple = posed.div({
 export const AMenu = posed.div({
   exit: {
     x: '100%',
-    transition: { duration: 1000 }
+    transition: (props: any) => {
+      return {
+        duration: props.duration
+      }
+    }
   },
   enter: {
     x: 0,
-    transition: { duration: 1000 },
+    transition: (props: any) => {
+      return {
+        duration: props.duration
+      }
+    },
     beforeChildren: true,
     staggerChildren: 100
   }

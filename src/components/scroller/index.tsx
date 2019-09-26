@@ -2,14 +2,13 @@ import React, { FC } from 'react'
 import { Box } from 'grommet'
 
 //=========================================================
-const Scroller: FC = () => (
-  <Box
-    className="absolute"
-    width="100%"
-    style={{ bottom: '2em', zIndex: 5 }}
-    justify="center"
-    align="center"
-  >
+interface Props {
+  style: any
+}
+
+//=========================================================
+const Scroller: FC<Props> = ({ style }) => (
+  <Box className="absolute" width="100%" style={style} justify="center" align="center">
     <Box
       className="relative"
       height="50px"

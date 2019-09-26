@@ -27,8 +27,8 @@ const Languages: FC = () => (
             level="3"
             color="black"
             margin="0 0 0.5em"
-            size={isMedium ? '1.25em' : isMiddle ? '1.35em' : '1.45em'}
-            style={{ fontWeight: 900 }}
+            size={isMedium ? '1.15em' : isMiddle ? '1.25em' : '1.35em'}
+            style={{ fontWeight: 600 }}
           >
             Languages
           </Heading>
@@ -67,9 +67,9 @@ const Languages: FC = () => (
                     </Box>
                   </Box>
                   <Text
-                    color="blue"
+                    color="dark"
                     size={isMobile ? '0.8em' : '0.9em'}
-                    style={{ fontWeight: 600, marginLeft: '1em' }}
+                    style={{ marginLeft: '1em' }}
                   >
                     {lang.percentage + '%'}
                   </Text>

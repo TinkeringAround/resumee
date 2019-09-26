@@ -27,8 +27,8 @@ const Skills: FC = () => (
             level="3"
             color="black"
             margin="0 0 0.5em"
-            size={isMedium ? '1.25em' : isMiddle ? '1.35em' : '1.45em'}
-            style={{ fontWeight: 900 }}
+            size={isMedium ? '1.15em' : isMiddle ? '1.25em' : '1.35em'}
+            style={{ fontWeight: 600 }}
           >
             Skills
           </Heading>
@@ -37,6 +37,7 @@ const Skills: FC = () => (
               return (
                 <Box
                   key={'Skill-' + index}
+                  height="100%"
                   width="100%"
                   direction="row"
                   align="center"
@@ -69,7 +70,7 @@ const Skills: FC = () => (
                   <Text
                     color="black"
                     size={isMobile ? '0.8em' : '0.9em'}
-                    style={{ fontWeight: 600, marginLeft: '1em' }}
+                    style={{ marginLeft: '1em' }}
                   >
                     {skill.percentage + '%'}
                   </Text>
