@@ -60,15 +60,10 @@ const Left: FC<Props> = ({ inView }) => {
             >
               My typical Tech-Stack
             </Heading>
-            <Text color="dark" size={isMobile ? '0.8em' : '1em'}>
+            <Text color="dark" size={isMobile ? '0.8em' : '1em'} margin="0 0 2em">
               React-Frontends and Nodejs-Backends.
             </Text>
-            <Box
-              className="gradientBackground"
-              width={isMobile ? '60%' : '30%'}
-              height="2px"
-              margin="1em 0 2em"
-            />
+
             <Skills />
             <Hobbies />
             <Languages />

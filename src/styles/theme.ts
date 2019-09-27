@@ -22,7 +22,6 @@ const theme = {
 
       dark: 'rgb(95, 95, 95)',
       light: 'rgb(176, 176, 176)',
-      gold: 'rgb(154, 129, 103)',
 
       // New Colors
       black: 'rgb(50,50,50)',

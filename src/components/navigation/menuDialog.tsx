@@ -78,7 +78,7 @@ const MenuDialog: FC<Props> = ({ expanded, open, close, isMobile }) => {
                 <Box height="50%" width="80%" margin="auto" justify="center">
                   {links.map((link: string, index: number) => (
                     <AMenuItem
-                      className="relative cursor"
+                      className="relative cursor mont"
                       key={link}
                       alt={labels[index]}
                       style={{ margin: '0 0 2em' }}

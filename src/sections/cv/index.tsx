@@ -39,12 +39,11 @@ const CV: FC = () => (
           >
             Curriculum Vitae.
           </Heading>
-
           <Text color="dark" size={isMobile ? '0.8em' : '1em'}>
             Where I aquired my <strong>developer skills.</strong>
           </Text>
           {isMobile && (
-            <Box className="gradientBackground" width="60%" height="2px" margin="1em 0 2em" />
+            <Box className="gradientBackground" width="60%" height="3px" margin="0.5em 0 2em" />
           )}
           <Box
             className="gradient"

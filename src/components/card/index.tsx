@@ -64,12 +64,12 @@ const Card: FC<Props> = ({ title, activities, duration, location, url }) => {
                   level="3"
                   size={isMobile ? '1em' : '1.25em'}
                   color={expanded ? 'blue' : 'black'}
-                  margin="0 0 0.25em 0"
+                  margin="0"
                   style={{ fontWeight: 900 }}
                 >
                   {title}
                 </Heading>
-                <Text size={isMobile ? '0.4em' : '0.6em'} color="dark" margin="0 0 0.5em">
+                <Text size={isMobile ? '0.55em' : '0.7em'} color="dark" margin="0 0 0.75em">
                   {duration}
                 </Text>
                 <ul style={ul}>

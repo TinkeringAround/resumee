@@ -24,8 +24,10 @@ const TOP_MOBILE = 150
 const Intro: FC = () => (
   <ResponsiveContext.Consumer>
     {size => {
+      const isPhone = size.includes('xsmall')
       const isMobile = size.includes('small')
       const isMedium = size.includes('medium')
+      const isLarge = size.includes('large')
 
       return (
         <Box
@@ -49,7 +51,7 @@ const Intro: FC = () => (
               level="1"
               margin="0"
               color="black"
-              size="1.25em"
+              size={isLarge ? '1.5em' : '1.25em'}
               style={{
                 letterSpacing: '0.1em',
                 fontWeight: 600
@@ -60,7 +62,7 @@ const Intro: FC = () => (
             <Box width={isMobile ? '70%' : '50%'}>
               <Text
                 color="dark"
-                size={isMobile ? '.7em' : '.8em'}
+                size={isMobile ? '.7em' : isLarge ? '1em' : '.8em'}
                 margin="0.5em 0 0"
                 style={{
                   fontWeight: 600
@@ -71,10 +73,10 @@ const Intro: FC = () => (
               </Text>
             </Box>
             <Box
-              width={isMobile ? '0%' : '30%'}
-              height="2px"
+              className="gradientBackground"
+              width={isMobile ? '60%' : '30%'}
+              height={isMobile ? '2px' : '5px'}
               margin="1em 0 0"
-              background="pink"
             ></Box>
           </Box>
           <Scroller style={{ bottom: isMobile ? 0 : '2em', zIndex: 5 }} />
@@ -90,14 +92,14 @@ const Intro: FC = () => (
 
           <Box
             className="absolute"
-            width={isMobile ? '100%' : '80%'}
-            height="90%"
-            style={{ right: isMobile ? 0 : '5%', bottom: '5%' }}
+            width={isMobile || isLarge ? '100%' : '80%'}
+            height={isLarge ? '100%' : '90%'}
+            style={{ right: isMobile ? 0 : isLarge ? 0 : '5%', bottom: isLarge ? 0 : '5%' }}
           >
             <LazyLoadImage
               alt={intro.title}
               effect="opacity"
-              src={isMobile ? intro.mobile : intro.desktop}
+              src={isPhone ? intro.mobile : intro.desktop}
               scrollPosition={false}
               visibleByDefault={false}
               width="100%"
