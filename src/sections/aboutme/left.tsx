@@ -36,7 +36,15 @@ const Left: FC<Props> = ({ inView }) => {
             background="white"
             width={isMobile ? '100%' : isMedium ? '60%' : '50%'}
             margin="0"
-            pad={isMobile ? '0' : isMedium ? '2.5em 2.5em' : isMiddle ? '2.5em 3.5em' : '4em 5em'}
+            pad={
+              isMobile
+                ? '0'
+                : isMedium
+                ? '2.5em 0 2.5em 2.5em'
+                : isMiddle
+                ? '2.5em 0 2.5em 3.5em'
+                : '4em 0 4em 5em'
+            }
             style={
               isMobile
                 ? {}

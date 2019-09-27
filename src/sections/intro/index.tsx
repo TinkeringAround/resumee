@@ -17,7 +17,6 @@ import intro from '../../assets/intro.json'
 
 // Consts
 const TOP_DESKTOP = 250
-const TOP_MEDIUM = 180
 const TOP_MOBILE = 150
 
 //=========================================================
@@ -42,7 +41,7 @@ const Intro: FC = () => (
             width={isMobile ? '70%' : '40%'}
             justify="center"
             style={{
-              top: isMobile ? TOP_MOBILE : isMedium ? TOP_MEDIUM : TOP_DESKTOP,
+              top: isMobile || isMedium ? TOP_MOBILE : TOP_DESKTOP,
               left: isMobile ? '5%' : '15%',
               zIndex: 5
             }}
@@ -59,7 +58,7 @@ const Intro: FC = () => (
             >
               Fullstack Developer.
             </Heading>
-            <Box width={isMobile ? '70%' : '50%'}>
+            <Box width={isMobile || isMedium ? '70%' : '60%'}>
               <Text
                 color="dark"
                 size={isMobile ? '.7em' : isLarge ? '1em' : '.8em'}

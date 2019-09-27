@@ -1,9 +1,17 @@
 import { TIntro, TCard, TProject, TSkill, TImage } from '.'
 
 //=========================================================
+// Intro
 declare module 'intro.json' {
   const intro: TIntro
   export default intro
+}
+
+//=========================================================
+// Navigation
+declare module 'navigation.json' {
+  const nav: TImage
+  export default nav
 }
 
 //=========================================================

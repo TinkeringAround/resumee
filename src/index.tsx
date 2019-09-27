@@ -24,7 +24,7 @@ import { PoseGroup } from 'react-pose'
 import { ASimple } from './atoms/animations'
 
 // Consts
-const NAVIGATION = 50
+const NAVIGATION = 30
 const ABOUT_ME = window.innerHeight / 2
 const FOOTER_HEIGHT = 400
 

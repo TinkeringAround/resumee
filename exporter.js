@@ -20,6 +20,25 @@ const pathPrefix = './src/assets/'
 
 // ===============================================
 
+// Navigation
+contentful
+  .getEntries({
+    content_type: 'navigation',
+    include: 2
+  })
+  .then(results => {
+    if (results.hasOwnProperty('items')) {
+      const navigation = {
+        title: results.items[0].fields['title'],
+        url: 'https:' + results.items[0].fields['logo'].fields['file'].url
+      }
+      fs.writeFileSync(pathPrefix + 'navigation.json', JSON.stringify(navigation, null, 2), 'utf-8')
+    }
+  })
+  .catch(error => console.log('Navigation:', error))
+
+// ===============================================
+
 // Intro
 contentful
   .getEntries({

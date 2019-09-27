@@ -14,6 +14,7 @@ export type TIcon = {
   viewport: string
   path: JSX.Element
 }
+
 //=========================================================
 export type TImage = {
   title: string

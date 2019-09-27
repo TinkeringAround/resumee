@@ -40,7 +40,7 @@ const Right: FC<Props> = ({ inView }) => {
         visibleByDefault={false}
         width="100%"
         height="100%"
-        style={{ objectFit: 'cover' }}
+        style={{ objectFit: 'contain' }}
       />
     </Box>
   )

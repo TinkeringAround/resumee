@@ -1,11 +1,12 @@
 import React, { FC, useState } from 'react'
 import { Box, ResponsiveContext, Heading } from 'grommet'
-
-// Atoms
-import Button from '../../atoms/button'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 // Partials
 import MenuDialog from './menuDialog'
+
+// Assets
+import navigation from '../../assets/navigation.json'
 
 //=========================================================
 interface Props {
@@ -20,6 +21,9 @@ const Navigation: FC<Props> = ({ expanded }) => {
     <ResponsiveContext.Consumer>
       {size => {
         const isMobile = size.includes('small')
+        const isMedium = size.includes('medium')
+
+        const logoSize = isMobile ? '40px' : isMedium ? '48px' : '56px'
 
         return (
           <>
@@ -33,19 +37,35 @@ const Navigation: FC<Props> = ({ expanded }) => {
               align="center"
               style={{ zIndex: 30 }}
             >
-              <Box margin={isMobile ? '0 0 0 2em' : '0 0 0 4em'}>
-                <Button
-                  text="TM"
-                  uppercase
-                  fontSize={isMobile ? (expanded ? '0.9em' : '0.8em') : expanded ? '1em' : '0.8em'}
-                  onClick={() => {
-                    const welcome = document.getElementById('welcome')
-                    if (welcome) welcome.scrollIntoView({ block: 'end', behavior: 'smooth' })
-                  }}
+              <Box
+                className="animated"
+                margin={isMobile ? '0 0 0 1em' : '0 0 0 2em'}
+                justify="center"
+                align={isMobile ? 'start' : 'center'}
+                style={{ cursor: 'pointer' }}
+                onClick={() => {
+                  const welcome = document.getElementById('welcome')
+                  if (welcome) welcome.scrollIntoView({ block: 'end', behavior: 'smooth' })
+                }}
+              >
+                <LazyLoadImage
+                  alt={navigation.title}
+                  effect="opacity"
+                  src={navigation.url}
+                  scrollPosition={false}
+                  visibleByDefault
+                  width={logoSize}
+                  height={logoSize}
+                  style={{ objectFit: 'cover' }}
                 />
               </Box>
               <Box className="cursor" onClick={() => setOpen(true)}>
-                <Heading level="4" margin="0 2em 0 0" color="blue" style={{ fontWeight: 900 }}>
+                <Heading
+                  level="4"
+                  margin={isMobile ? '0 1em 0 0' : '0 2em 0 0'}
+                  color="blue"
+                  style={{ fontWeight: 900 }}
+                >
                   Menu
                 </Heading>
               </Box>

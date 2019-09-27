@@ -70,7 +70,12 @@ const MenuDialog: FC<Props> = ({ expanded, open, close, isMobile }) => {
                     <Box margin={isMobile ? '0 0 0 2em' : '0'} direction="row">
                       <ContactIcons iconSize={isMobile ? 30 : 35} />
                     </Box>
-                    <Heading level="4" color="white" margin="0 2em" style={{ fontWeight: 900 }}>
+                    <Heading
+                      level="4"
+                      color="white"
+                      margin={isMobile ? '0 1em' : '0 2em'}
+                      style={{ fontWeight: 900 }}
+                    >
                       Close
                     </Heading>
                   </ASimple>
