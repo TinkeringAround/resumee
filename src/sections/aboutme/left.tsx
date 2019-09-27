@@ -37,7 +37,15 @@ const Left: FC<Props> = ({ inView }) => {
             width={isMobile ? '100%' : isMedium ? '60%' : '50%'}
             margin="0"
             pad={isMobile ? '0' : isMedium ? '2.5em 2.5em' : isMiddle ? '2.5em 3.5em' : '4em 5em'}
-            style={isMobile ? {} : { top: 0, left: '5%', zIndex: 21 }}
+            style={
+              isMobile
+                ? {}
+                : {
+                    top: 0,
+                    left: '5%',
+                    zIndex: 21
+                  }
+            }
           >
             {/* Animation */}
             <PoseGroup>

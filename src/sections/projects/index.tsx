@@ -98,7 +98,7 @@ const Projects: FC = () => (
                         </Text>
                       </Box>
                       <a
-                        className="animated noFlickr scale"
+                        className={'animated noFlickr ' + (!isMobile ? 'scale' : '')}
                         aria-label={project.title}
                         href={project.url}
                         target="_blank"

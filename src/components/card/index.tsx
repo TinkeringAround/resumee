@@ -52,7 +52,7 @@ const Card: FC<Props> = ({ title, activities, duration, location, url }) => {
             }
             width="90%"
             pad={isMobile ? '1em' : '2em'}
-            margin="0 auto 1em"
+            margin="0 auto 2em"
             pose={expanded ? 'expanded' : 'normal'}
             onClick={() => setExpanded(!expanded)}
             style={{ border: expanded ? '2px solid var(--pink)' : '2px solid transparent' }}
