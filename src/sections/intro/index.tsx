@@ -67,7 +67,7 @@ const Intro: FC = () => (
                   fontWeight: 600
                 }}
               >
-                I'm constantly trying to improve my technical and social skills to help building
+                I'm constantly trying to improve my technical and social skills to help build
                 awesome software for people.
               </Text>
             </Box>
