@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { Portal } from 'react-portal'
 import { PoseGroup } from 'react-pose'
-import { Box, Text, Heading } from 'grommet'
+import { Box, Heading } from 'grommet'
 
 // Atoms
 import { AMenu, AMenuItem, ASimple } from '../../atoms/animations'
@@ -83,7 +83,7 @@ const MenuDialog: FC<Props> = ({ expanded, open, close, isMobile }) => {
                 <Box height="50%" width="80%" margin="auto" justify="center">
                   {links.map((link: string, index: number) => (
                     <AMenuItem
-                      className="relative cursor mont"
+                      className="relative cursor"
                       key={link}
                       alt={labels[index]}
                       style={{ margin: '0 0 2em' }}
@@ -93,14 +93,15 @@ const MenuDialog: FC<Props> = ({ expanded, open, close, isMobile }) => {
                         close()
                       }}
                     >
-                      <Text
-                        className="mont"
+                      <Heading
+                        level="1"
                         size={isMobile ? '2em' : '3em'}
-                        weight="bold"
                         color="white"
+                        margin="0"
+                        style={{ fontWeight: 900 }}
                       >
                         {link}
-                      </Text>
+                      </Heading>
                     </AMenuItem>
                   ))}
                 </Box>

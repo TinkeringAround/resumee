@@ -5,16 +5,22 @@ import { Box } from 'grommet'
 import { TIcon } from '../../types'
 
 // Atoms
-import { email, facebook, linkedIn } from '../../atoms/icons'
+import { email, facebook, linkedIn, github } from '../../atoms/icons'
 
 // Consts
-const icons: Array<TIcon> = [email, facebook, linkedIn]
+const icons: Array<TIcon> = [email, facebook, linkedIn, github]
 const contacts = [
   'mailto:maier.thomas94@gmail.com',
   'https://www.facebook.com/thomas.maier.948',
-  'https://www.linkedin.com/in/maier-thomas94'
+  'https://www.linkedin.com/in/maier-thomas94',
+  'https://github.com/TinkeringAround'
 ]
-const labels = ['Write an Email to me', 'Check me out on Facebook', 'Check me out on LinkedIn']
+const labels = [
+  'Write an Email to me',
+  'Check me out on Facebook',
+  'Check me out on LinkedIn',
+  'Check me out on GitHub'
+]
 
 //=========================================================
 interface Props {
@@ -50,7 +56,7 @@ const ContactIcons: FC<Props> = ({ iconSize = 30 }) => (
             }}
           >
             <svg
-              className={'animated white'}
+              className="animated white"
               xmlns="http://www.w3.org/2000/svg"
               width={iSize}
               height={iSize}

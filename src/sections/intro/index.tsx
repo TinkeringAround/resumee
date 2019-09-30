@@ -16,7 +16,7 @@ import params from './params'
 import intro from '../../assets/intro.json'
 
 // Consts
-const TOP_DESKTOP = 250
+const TOP_DESKTOP = 200
 const TOP_MOBILE = 150
 
 //=========================================================
@@ -100,7 +100,7 @@ const Intro: FC = () => (
               effect="opacity"
               src={isPhone ? intro.mobile : intro.desktop}
               scrollPosition={false}
-              visibleByDefault={false}
+              visibleByDefault
               width="100%"
               height="100%"
               style={{ objectFit: 'contain' }}

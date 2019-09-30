@@ -2,6 +2,7 @@ import React, { FC, useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import * as serviceWorker from './utility/serviceWorker'
 import { Grommet, Box } from 'grommet'
+import { PoseGroup } from 'react-pose'
 
 // Styles
 import './styles/colors.css'
@@ -18,12 +19,14 @@ import CV from './sections/cv'
 import Projects from './sections/projects'
 import Footer from './sections/footer'
 
+// Atoms
+import { ASimple, AIntro } from './atoms/animations'
+
 // Components
 import Navigation from './components/navigation'
-import { PoseGroup } from 'react-pose'
-import { ASimple } from './atoms/animations'
 
 // Consts
+const INTRO_DURATION = 250
 const NAVIGATION = 30
 const ABOUT_ME = window.innerHeight / 2
 const FOOTER_HEIGHT = 400
@@ -35,7 +38,7 @@ const App: FC = () => {
   const [scrollAtAboutMe, setScrollAtAboutMe] = useState<boolean>(false)
 
   useEffect(() => {
-    if (intro === 'exit') setTimeout(() => setIntro('enter'), 250)
+    if (intro === 'exit') setTimeout(() => setIntro('enter'), INTRO_DURATION)
   })
 
   const onScroll = (event: any) => {
@@ -53,10 +56,11 @@ const App: FC = () => {
   return (
     <PoseGroup flipMove={false}>
       {/* Intro Animation */}
+      {/* {intro === 'exit' && <AIntro key="Intro" duration={1000} />} */}
 
       {/* Webseite */}
       {intro === 'enter' && (
-        <ASimple key="grommet">
+        <ASimple key="grommet" delay={0}>
           <Grommet
             id="grommet"
             className="relative"
@@ -65,21 +69,15 @@ const App: FC = () => {
             style={{ background: 'transparent' }}
             onScroll={onScroll}
           >
-            {/* Main */}
-            <Box
-              className="relative shadow"
-              width="100%"
-              margin={`0 0 ${FOOTER_HEIGHT}px`}
-              style={{ zIndex: 20 }}
-            >
-              {/* Sections */}
-              <Navigation expanded={!scroll} />
-              <Intro />
-              <About inView={scrollAtAboutMe} />
-              <CV />
-              <HireMe />
-              <Projects />
-            </Box>
+            {/* Navigation */}
+            <Navigation expanded={!scroll} />
+
+            {/* Sections */}
+            <Intro />
+            <About inView={scrollAtAboutMe} />
+            <CV />
+            <HireMe />
+            <Projects />
 
             {/* Footer */}
             <Footer key="Footer" height={FOOTER_HEIGHT} />

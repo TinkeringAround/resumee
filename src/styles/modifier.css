@@ -31,12 +31,3 @@ body {
 .cursor {
   cursor: pointer;
 }
-
-/* Fonts */
-.mont {
-  font-family: 'Montserrat';
-}
-
-.muli {
-  font-family: 'Muli';
-}

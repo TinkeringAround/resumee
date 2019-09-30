@@ -20,12 +20,7 @@ const Projects: FC = () => (
       const heightMultiplicator = isMobile ? projects.length + 1 : parsedLength + 1
 
       return (
-        <Box
-          id="projects"
-          width="100%"
-          background="white"
-          style={{ boxShadow: '10px 10px 10px 5px rgba(0, 0, 0, 0.2)' }}
-        >
+        <Box id="projects" width="100%" background="white">
           <Box width="100%">
             <Box
               width={isMobile ? '90%' : isMedium || isMiddle ? '80%' : '60%'}

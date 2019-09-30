@@ -37,6 +37,8 @@ const Card: FC<Props> = ({ title, activities, duration, location, url }) => {
           display: 'block',
           margin: '0 0 0.5em',
           color: theme.global.colors.dark,
+
+          fontFamily: 'Muli',
           fontSize: isMobile ? '0.75em' : '0.85em',
           lineHeight: '1.2em'
         }
@@ -78,7 +80,6 @@ const Card: FC<Props> = ({ title, activities, duration, location, url }) => {
                       activities.map((activity: string, index: number) => (
                         <ListItem
                           key={'Activity-' + index}
-                          className="muli"
                           style={li}
                           enterMultiplicator={index + 1}
                           exitMultiplicator={activities.length - index}

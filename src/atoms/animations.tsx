@@ -2,6 +2,33 @@ import posed from 'react-pose'
 import styled from 'styled-components'
 
 // ===============================================
+export const AIntro = posed(styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+
+  background: var(--green);
+  z-index: 30;
+`)({
+  exit: {
+    opacity: 0,
+    height: 0,
+    transition: (props: any) => {
+      return {
+        duration: props.duration
+      }
+    }
+  },
+  enter: {
+    opacity: 1,
+    height: '100vh',
+    transition: { duration: 50 }
+  }
+})
+
+// ===============================================
 // Simple
 export const ASimple = posed.div({
   exit: { opacity: 0 },
@@ -57,5 +84,3 @@ export const AMenuItem = posed.div({
   exit: { opacity: 0, left: '-5%' },
   enter: { opacity: 1, left: 0 }
 })
-
-// ===============================================

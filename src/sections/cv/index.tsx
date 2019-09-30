@@ -46,7 +46,6 @@ const CV: FC = () => (
             <Box className="gradientBackground" width="60%" height="3px" margin="0.5em 0 2em" />
           )}
           <Box
-            className="gradient"
             width={isMobile ? '100%' : isMedium ? '80%' : isMiddle ? '60%' : '50%'}
             direction="column"
             margin={isMobile ? '0 auto 4em' : '4em auto'}

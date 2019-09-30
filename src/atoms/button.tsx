@@ -37,6 +37,7 @@ const Button: FC<Props> = ({
         borderStyle: 'solid',
         borderWidth: isMobile ? 3 : 4,
 
+        fontFamily: 'Montserrat',
         fontSize: fontSize,
         fontWeight: 900,
         letterSpacing: '0.01em',
@@ -45,7 +46,7 @@ const Button: FC<Props> = ({
       }
 
       return (
-        <button className="mont animated blue" style={style} onClick={onClick}>
+        <button className="animated blue" style={style} onClick={onClick}>
           {uppercase ? text.toUpperCase() : text}
           {arrow && (
             <svg

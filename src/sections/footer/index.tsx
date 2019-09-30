@@ -16,13 +16,7 @@ const Footer: FC<Props> = ({ height }) => (
       const isMobile = size.includes('small')
 
       return (
-        <Box
-          className="fixed"
-          width={isMobile ? '100%' : 'calc(100% - 10px)'}
-          height={height + 'px'}
-          background="blue"
-          style={{ bottom: 0, right: 0, left: 0, zIndex: 10 }}
-        >
+        <Box width="100%" height={height + 'px'} background="blue">
           <Box width={isMobile ? '90%' : '60%'} margin="6em auto 2em" justify="center">
             <Heading
               level="2"
