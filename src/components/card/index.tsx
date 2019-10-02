@@ -60,6 +60,7 @@ const Card: FC<Props> = ({ title, activities, duration, location, url }) => {
             style={{ border: expanded ? '2px solid var(--pink)' : '2px solid transparent' }}
           >
             <Box height="100%" width="100%" justify="between" align="end" direction="column">
+              {/* Content */}
               <Box className="relative" width="100%" pad={isMobile ? '0' : '0 2em 0 0'}>
                 <Heading
                   className="animated"
@@ -90,6 +91,8 @@ const Card: FC<Props> = ({ title, activities, duration, location, url }) => {
                   </PoseGroup>
                 </ul>
               </Box>
+
+              {/* Link Position */}
               <Box
                 width={isMobile ? '100%' : '30%'}
                 align="end"

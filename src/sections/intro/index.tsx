@@ -78,14 +78,15 @@ const Intro: FC = () => (
               margin="1em 0 0"
             ></Box>
           </Box>
-          <Scroller style={{ bottom: isMobile ? 0 : '2em', zIndex: 5 }} />
+
+          {!isLarge && <Scroller style={{ bottom: isMobile ? 0 : '2em', zIndex: 5 }} />}
 
           {/* Background */}
           <Particles
             width="100%"
             height={window.innerHeight + 'px'}
             //@ts-ignore
-            params={params}
+            params={params(isMobile ? 30 : 75)}
             style={{ zIndex: 20, top: 0, left: 0 }}
           />
 

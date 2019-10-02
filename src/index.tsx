@@ -1,7 +1,7 @@
 import React, { FC, useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import * as serviceWorker from './utility/serviceWorker'
-import { Grommet, Box } from 'grommet'
+import { Grommet } from 'grommet'
 import { PoseGroup } from 'react-pose'
 
 // Styles
@@ -20,7 +20,7 @@ import Projects from './sections/projects'
 import Footer from './sections/footer'
 
 // Atoms
-import { ASimple, AIntro } from './atoms/animations'
+import { ASimple } from './atoms/animations'
 
 // Components
 import Navigation from './components/navigation'
@@ -56,7 +56,7 @@ const App: FC = () => {
   return (
     <PoseGroup flipMove={false}>
       {/* Intro Animation */}
-      {/* {intro === 'exit' && <AIntro key="Intro" duration={1000} />} */}
+      {/* {intro === 'exit' && <AIntro key="Intro" duration={2000} />} */}
 
       {/* Webseite */}
       {intro === 'enter' && (

@@ -22,7 +22,8 @@ const theme = {
       black: 'rgb(50,50,50)',
       blue: 'rgb(36, 32, 135)',
       red: '#f0232d',
-      pink: '#e60064'
+      pink: '#e60064',
+      green: '#3ce197'
     }
   },
   text: {
