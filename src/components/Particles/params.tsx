@@ -1,11 +1,14 @@
-const config = (value: number) => {
+import { TColors, colors } from '../../styles/styles'
+
+//=========================================================
+const params: (value: number, color: TColors) => object = (value: number, color: TColors) => {
   return {
     particles: {
       number: {
         value: value
       },
       color: {
-        value: ['#0259fa', '#f0232d', '#e60064', '#3ce197']
+        value: colors[color]
       },
       shape: {
         type: 'circle',
@@ -56,4 +59,4 @@ const config = (value: number) => {
   }
 }
 
-export default config
+export default params
