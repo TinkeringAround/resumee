@@ -7,7 +7,6 @@ import { colors } from '../styles/'
 // Assets
 import noiseBackground from '../assets/noise.png'
 
-// Atoms
 //=========================================================
 const SLayout = styled.div`
   position: relative;

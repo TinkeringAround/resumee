@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import Typical from 'react-typical'
 
 // Styles
-import { colors } from '../../styles/'
+import { colors, breakPoints } from '../../styles/'
 
 //=========================================================
 export const SBox = styled.div`
@@ -11,10 +11,15 @@ export const SBox = styled.div`
   left: 7.5%;
   z-index: 30;
 
-  width: 40%;
+  width: 70%;
 
   display: flex;
   flex-direction: column;
+
+  @media (max-width: ${breakPoints['mobile']}px) {
+    top: 5%;
+    width: 85%;
+  }
 `
 
 export const SHeader = styled(Typical)`
@@ -31,7 +36,7 @@ export const SHeader = styled(Typical)`
 `
 
 export const SSubHeader = styled.span`
-  width: 80%;
+  width: 60%;
 
   margin: 0.25rem 0 0 0.15rem;
 
@@ -42,6 +47,10 @@ export const SSubHeader = styled.span`
   line-height: 1.5;
 
   cursor: default;
+
+  @media (max-width: ${breakPoints['mobile']}px) {
+    width: 90%;
+  }
 `
 
 export const SWrapper = styled.div`

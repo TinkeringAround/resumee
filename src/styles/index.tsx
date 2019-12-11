@@ -1,5 +1,6 @@
 export type TColors = 'lightgrey' | 'darkgrey' | 'black' | 'red' | 'green' | 'yellow' | 'blue'
 
+//=========================================================
 export const colors = {
   lightgrey: '#fcfcfd',
   darkgrey: 'rgb(95, 95, 95)',
@@ -9,4 +10,9 @@ export const colors = {
   yellow: '#FDE74C',
   red: '#e60064',
   green: '#3ce197'
+}
+
+//=========================================================
+export const breakPoints = {
+  mobile: 780
 }

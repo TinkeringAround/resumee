@@ -52,7 +52,6 @@ const SIcon = styled.svg`
 // ===============================================
 interface Props {
   type: TIcon
-  size?: string
   margin?: string
 }
 

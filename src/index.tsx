@@ -14,13 +14,8 @@ import Introduction from './components/introduction/'
 //=========================================================
 const App: FC = () => (
   <Layout>
-    {/* Introduction */}
     <Introduction />
-
-    {/* Particles */}
     <MyParticles />
-
-    {/* Images */}
     <Me />
   </Layout>
 )
