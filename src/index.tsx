@@ -9,10 +9,14 @@ import './styles/index.css'
 import Layout from './components/layout'
 import Me from './components/me'
 import MyParticles from './components/Particles'
+import Introduction from './components/introduction/'
 
 //=========================================================
 const App: FC = () => (
   <Layout>
+    {/* Introduction */}
+    <Introduction />
+
     {/* Particles */}
     <MyParticles />
 

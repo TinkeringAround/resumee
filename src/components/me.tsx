@@ -26,7 +26,7 @@ const SImage = styled.img`
 //=========================================================
 const Me: FC = () => (
   <SWrapper>
-    <SImage src={me}></SImage>
+    <SImage src={me} />
   </SWrapper>
 )
 export default Me

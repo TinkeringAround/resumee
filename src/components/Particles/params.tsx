@@ -1,4 +1,4 @@
-import { TColors, colors } from '../../styles/styles'
+import { TColors, colors } from '../../styles/'
 
 //=========================================================
 const params: (value: number, color: TColors) => object = (value: number, color: TColors) => {

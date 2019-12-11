@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import styled from 'styled-components'
 
 // Styles
-import { colors } from '../styles/styles'
+import { colors } from '../styles/'
 
 // Assets
 import noiseBackground from '../assets/noise.png'
