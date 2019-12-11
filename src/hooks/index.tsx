@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
 //=========================================================
-export function useMedia(breakPoint: number) {
+export function useBreakpoint(breakPoint: number) {
   const [state, setState] = useState(false)
 
   useEffect(() => {

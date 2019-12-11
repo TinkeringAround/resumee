@@ -1,15 +1,16 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
+import LazyHero from 'react-lazy-hero'
 
 // Styles
 import { breakPoints } from '../styles/'
 
 // Assets
-import me from '../assets/me.png'
-import meMobile from '../assets/meMobile.png'
+import desktop from '../assets/desktop.png'
+import mobile from '../assets/mobile.png'
 
 // Hooks
-import { useMedia } from '../hooks'
+import { useBreakpoint } from '../hooks'
 
 //=========================================================
 const SWrapper = styled.div`
@@ -29,8 +30,14 @@ const SWrapper = styled.div`
   }
 `
 
-const SImage = styled.img`
+const SImage = styled(LazyHero)`
   height: 90%;
+  width: 95%;
+
+  div {
+    background-size: contain;
+    background-position: right;
+  }
 
   @media (max-width: ${breakPoints['mobile']}px) {
     height: 80%;
@@ -39,11 +46,11 @@ const SImage = styled.img`
 
 //=========================================================
 const Me: FC = () => {
-  const isMobile = useMedia(breakPoints['mobile'])
+  const isMobile = useBreakpoint(breakPoints['mobile'])
 
   return (
     <SWrapper>
-      <SImage src={isMobile ? meMobile : me} />
+      <SImage imageSrc={isMobile ? mobile : desktop} transitionDuration={1000} opacity={0} />
     </SWrapper>
   )
 }
