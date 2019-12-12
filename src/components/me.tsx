@@ -41,6 +41,8 @@ const SImage = styled(LazyHero)`
 
   @media (max-width: ${breakPoints['mobile']}px) {
     height: 80%;
+
+    margin-bottom: 1rem;
   }
 `
 
