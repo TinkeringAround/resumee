@@ -1,1 +1,1 @@
-export type TIcon = 'facebook' | 'linkedin' | 'github'
+export type TIcon = 'facebook' | 'linkedin' | 'github' | "dribbble"

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import Typical from 'react-typical'
 
-// Styles
+
 import { colors, breakPoints } from '../../styles/'
 
 //=========================================================

@@ -7,3 +7,25 @@ body {
 
   overflow: hidden;
 }
+
+a[title]:hover:after {
+  content: attr(title);
+
+  position: absolute;
+  top: calc(100% + 0.5rem);
+
+  padding: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fcfcfd;
+  background-color: rgb(95, 95, 95);
+
+  font-family: Roboto, serif;
+  font-size: 1rem;
+  font-weight: bold;
+
+  border-radius: 0.25rem;
+}

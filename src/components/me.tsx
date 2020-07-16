@@ -2,15 +2,12 @@ import React, { FC } from 'react'
 import styled from 'styled-components'
 import LazyHero from 'react-lazy-hero'
 
-// Styles
 import { breakPoints } from '../styles/'
 
-// Assets
+import { useBreakpoint } from '../hooks'
+
 import desktop from '../assets/desktop.png'
 import mobile from '../assets/mobile.png'
-
-// Hooks
-import { useBreakpoint } from '../hooks'
 
 //=========================================================
 const SWrapper = styled.div`

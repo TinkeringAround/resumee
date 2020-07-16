@@ -1,7 +1,6 @@
 import React, { FC, Fragment } from 'react'
 import Particles from 'react-particles-js'
 
-// Config
 import params from './params'
 
 //=========================================================
