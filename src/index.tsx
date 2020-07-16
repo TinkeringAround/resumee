@@ -1,7 +1,9 @@
 import React, { FC } from 'react'
 import ReactDOM from 'react-dom'
 import * as serviceWorker from './utility/serviceWorker'
-import 'react-app-polyfill/ie11';
+
+// Polyfills for IE
+import 'core-js'
 
 import './styles/index.css'
 

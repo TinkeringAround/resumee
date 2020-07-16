@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "corejs": "^1.0.0",
     "react": "^16.13.1",
-    "react-app-polyfill": "^1.0.6",
     "react-dom": "^16.13.1",
     "react-lazy-hero": "^2.0.0",
     "react-particles-js": "^3.2.1",
@@ -31,13 +31,13 @@
     "production": [
       ">0.2%",
       "not dead",
-      "not op_mini all",
-      "ie >= 11"
+      "not op_mini all"
     ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
-      "last 1 safari version"
+      "last 1 safari version",
+      "ie 11"
     ]
   }
 }

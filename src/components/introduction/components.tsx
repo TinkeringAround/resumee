@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import Typical from 'react-typical'
 
 
-import { colors, breakPoints } from '../../styles/'
+import {colors, breakPoints} from '../../styles/'
 
 //=========================================================
 export const SBox = styled.div`
@@ -54,6 +54,7 @@ export const SSubHeader = styled.span`
 `
 
 export const SWrapper = styled.div`
+  height: 3rem;
   margin: 0.75rem 0 0;
 
   display: flex;
