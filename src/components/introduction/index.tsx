@@ -24,7 +24,6 @@ const Introduction: FC = () => {
             <SWrapper>
                 <Icon type="github" margin="0 1rem 0 .1rem"/>
                 <Icon type="dribbble" margin="0 1rem 0 0"/>
-                <Icon type="linkedin" margin="0 1rem 0 0"/>
                 <Icon type="facebook" />
             </SWrapper>
         </SBox>
